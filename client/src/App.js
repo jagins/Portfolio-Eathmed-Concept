@@ -1,10 +1,11 @@
 import React from 'react';
+import MarketingPage from './components/MarketingPage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-     <h1>hello world</h1>
+      <MarketingPage />
     </div>
   );
 }
