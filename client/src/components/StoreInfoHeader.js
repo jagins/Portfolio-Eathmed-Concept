@@ -16,7 +16,7 @@ function StoreInfo() {
                     </address>
                 </div>
                 <div className='store-info'>
-                    <p className='info'><MdPhone />(847)607-0796</p>
+                    <p className='info'><MdPhone />(847) 607-0796</p>
                     <p className='info'><FaRegClock /> View Hours</p>
                     <p><FaShoppingCart />Shop Now</p>
                 </div>

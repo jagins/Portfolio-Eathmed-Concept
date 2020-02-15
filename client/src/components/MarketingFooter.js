@@ -1,5 +1,5 @@
 import React from 'react';
-import StoreInfo from './StoreInfo';
+import StoreInfoFooter from './StoreInforFooter';
 
 function MarketingFooter() {
     return (
@@ -27,7 +27,7 @@ function MarketingFooter() {
                     </div>
                 </div>
                 <div className='store-footer'>
-                    <StoreInfo />
+                    <StoreInfoFooter />
                 </div>
             </div>
         </footer>
