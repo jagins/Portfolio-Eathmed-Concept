@@ -4,6 +4,7 @@ import Card from './Card';
 import marketingCards from '../utils/MarketingCardArray';
 import ContactForm from './ContactForm';
 import Help from './Help';
+import MarketingFooter from './MarketingFooter';
 import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
