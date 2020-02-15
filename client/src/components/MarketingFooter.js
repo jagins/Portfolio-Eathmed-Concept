@@ -26,7 +26,9 @@ function MarketingFooter() {
                         <p>Contact Us</p>
                     </div>
                 </div>
-                <StoreInfo />
+                <div className='store-footer'>
+                    <StoreInfo />
+                </div>
             </div>
         </footer>
     )
