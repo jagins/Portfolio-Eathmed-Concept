@@ -1,10 +1,10 @@
 import React from 'react';
-import CompanyInfo from './CompanyInfo';
-import Card from './Card';
+import CompanyInfo from '../components/CompanyInfo';
+import Card from '../components/Card';
 import marketingCards from '../utils/MarketingCardArray';
-import ContactForm from './ContactForm';
-import Help from './Help';
-import MarketingFooter from './MarketingFooter';
+import ContactForm from '../components/ContactForm';
+import Help from '../components/Help';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
