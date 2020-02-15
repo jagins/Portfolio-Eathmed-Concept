@@ -3,6 +3,7 @@ import logo from '../images/earthmed-site-logo-bigger.png';
 import { MdPlace, MdPhone } from 'react-icons/md';
 import { FaRegClock, FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
+import '../Styles/CompanyInfo.css';
 
 function CompanyInfo() {
     return (
