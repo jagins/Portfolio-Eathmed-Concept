@@ -19,7 +19,7 @@ form .subject
 
 form textarea
 {
-    width: 25%;
+    width: 22%;
     resize: vertical;
     height: 10rem;
 }
