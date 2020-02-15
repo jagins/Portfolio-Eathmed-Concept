@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../images/earthmed-site-logo-bigger.png';
-import StoreInfo from './StoreInfoHeader';
+import StoreInfoHeader from './StoreInfoHeader';
 import '../Styles/CompanyInfo.css';
 
 function CompanyInfo() {
@@ -9,7 +9,7 @@ function CompanyInfo() {
             <div className='img-container'>
                 <img src={logo} alt='EarthMed' />
             </div>
-           <StoreInfo/>
+           <StoreInfoHeader/>
         </div>
     );
 }

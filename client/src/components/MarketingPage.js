@@ -13,8 +13,9 @@ function MarketingPage() {
             <CompanyInfo />
             <div className='marketing-middle-section'>
                 <div className='card-container'>
-                    {marketingCards.map(card =>
+                    {marketingCards.map((card, index) =>
                         <Card
+                            key={index}
                             url={card.url}
                             alt={card.caption}
                             title={card.title}

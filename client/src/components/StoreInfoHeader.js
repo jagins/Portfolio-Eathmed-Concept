@@ -3,7 +3,7 @@ import { MdPlace, MdPhone } from 'react-icons/md';
 import { FaRegClock, FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
-function StoreInfo() {
+function StoreInfoHeader() {
     return (
         <IconContext.Provider value={{ color: 'green', size: '30px', className: 'icons' }}>
             <div className='contact-icons'>
@@ -26,4 +26,4 @@ function StoreInfo() {
 }
 
 
-export default StoreInfo;
+export default StoreInfoHeader;

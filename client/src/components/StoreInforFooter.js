@@ -1,5 +1,4 @@
 import React from 'react';
-import StoreInfo from './StoreInfoHeader';
 import { MdPlace, MdPhone } from 'react-icons/md';
 import { FaRegClock, FaEnvelope } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
@@ -24,12 +23,12 @@ function StoreInfoFooter()
                         <span>
                             Sun - 12pm to 5pm (Medical Only)
                         </span>
-                        <p className='hours'>Mon - 11am to 7pm</p>
-                        <p className='hours'>Tues - 11am to 7pm</p>
-                        <p className='hours'>Wed - 11am to 7pm</p>
-                        <p className='hours'>Thu - 11am to 8pm</p>
-                        <p className='hours'>Fri - 11am to 8pm</p>
-                        <p className='hours'>Sat - 11am to 8pm</p>
+                        <span className='hours'>Mon - 11am to 7pm</span>
+                        <span className='hours'>Tues - 11am to 7pm</span>
+                        <span className='hours'>Wed - 11am to 7pm</span>
+                        <span className='hours'>Thu - 11am to 8pm</span>
+                        <span className='hours'>Fri - 11am to 8pm</span>
+                        <span className='hours'>Sat - 11am to 8pm</span>
                     </p>
                     <p className='info'><FaEnvelope/>support@earthmed.com</p>
                 </div>
