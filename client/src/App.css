@@ -34,8 +34,13 @@
     margin-top: 2%;
 }
 
-.card p
+.card .button
 {
-    /* margin-left: 2%; */
-    
+   color: green;
+   font-weight: bold;
+}
+
+.card .button:hover
+{
+    cursor: pointer;
 }
