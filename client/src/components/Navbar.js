@@ -1,5 +1,7 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import {FaFacebookSquare, FaTwitter} from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 
 function NavbarComponent() {
     return (
@@ -22,7 +24,13 @@ function NavbarComponent() {
                     </NavDropdown>
                     <Nav.Link style={{marginLeft: '50px'}} href='#'>Reviews</Nav.Link>
                     <Nav.Link style={{marginLeft: '50px'}} href='#'>Store</Nav.Link>
-                    <Nav.Link style={{marginLeft: '50px'}}href='#'>Contact Us</Nav.Link>
+                    <Nav.Link style={{marginLeft: '50px'}}href='#'>Contact</Nav.Link>
+                  <IconContext.Provider value={{size: '30px'}}>
+                        <div className='social-icons' style={{marginLeft: '10%', marginTop: '0.5%'}}>
+                            <FaTwitter/>
+                            <FaFacebookSquare className='twitter'/>
+                        </div>
+                   </IconContext.Provider>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>

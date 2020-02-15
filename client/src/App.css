@@ -40,3 +40,10 @@
 {
     margin-right: 5%;
 }
+
+.social-icons
+{
+    color: darkgray;
+    display: flex;
+    cursor: pointer;
+}
