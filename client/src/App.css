@@ -20,19 +20,16 @@ footer .headings
 footer .information
 {
     display: flex;
-    /* border: 1px solid red; */
 } 
 
 footer .information .about
 {
-    /* border: 1px solid ; */
     width: 25%;
     margin-left: 7.5%;
 }
 
 footer .information .links
 {
-    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -42,7 +39,13 @@ footer .information .links
 
 footer .information .store-footer
 {
-    /* border: 1px solid red; */
     width: 20%;
-    margin-left: 10%;
+    margin-left: 12%;
+}
+
+footer .information .store-footer .contact-icons
+{
+   width: 100%;
+   margin-top: 0%;
+   margin-left: 0%;
 }
