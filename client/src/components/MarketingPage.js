@@ -3,6 +3,7 @@ import CompanyInfo from './CompanyInfo';
 import Card from './Card';
 import marketingCards from '../utils/MarketingCardArray';
 import ContactForm from './ContactForm';
+import Help from './Help';
 import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
@@ -21,7 +22,8 @@ function MarketingPage() {
                 </div>
             </div>
             <div className='marketing-contact-section'>
-                <ContactForm/>
+                <Help />
+                <ContactForm />
             </div>
         </div>
     );

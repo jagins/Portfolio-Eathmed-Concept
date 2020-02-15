@@ -1,25 +1,28 @@
+.contact-form
+{
+    width: 70%;
+    margin-top: 1%;
+}
+
 form
 {
-    border: 1px solid red;
+    height: 100%;
+    margin-left: 15%;
 }
 
 form input
 {
-    margin-right: 2%;
-    margin-bottom: 1%;
-    width: 10%;
-    padding-top: 0.2%;
-    padding-bottom: 0.2%;
+    margin-bottom: 3%;
+    margin-right: 5%;
 }
 
-form .subject
+.subject
 {
-    width: 22%;
+    width: 47.5%;
 }
 
 form textarea
 {
-    width: 22%;
-    resize: vertical;
+    width: 47.5%;
     height: 10rem;
 }
