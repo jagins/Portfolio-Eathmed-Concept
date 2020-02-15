@@ -1,7 +1,7 @@
 import React from 'react';
 import StoreInfo from './StoreInfoHeader';
 import { MdPlace, MdPhone } from 'react-icons/md';
-import { FaRegClock, FaShoppingCart } from 'react-icons/fa';
+import { FaRegClock, FaEnvelope } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
 
@@ -31,6 +31,7 @@ function StoreInfoFooter()
                         <p className='hours'>Fri - 11am to 8pm</p>
                         <p className='hours'>Sat - 11am to 8pm</p>
                     </p>
+                    <p className='info'><FaEnvelope/>support@earthmed.com</p>
                 </div>
             </div>
         </IconContext.Provider>
