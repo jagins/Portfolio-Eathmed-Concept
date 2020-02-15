@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import '../Styles/ContactForm.css';
 
 function ContactForm()
@@ -15,7 +16,7 @@ function ContactForm()
             <br/>
             <textarea placeholder='Message'/>
             <br/>
-            <button>Send Message</button>
+            <Button variant='success'>Send Message</Button>
     </form>
     );
 }
