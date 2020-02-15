@@ -8,7 +8,7 @@ import { IconContext } from 'react-icons';
 function StoreInfoFooter()
 {
     return(
-        <IconContext.Provider value={{ color: 'green', size: '30px', className: 'icons' }}>
+        <IconContext.Provider value={{ color: '#999C9F', size: '30px', className: 'icons' }}>
             <div className='contact-icons'>
                 <div className='address'>
                     <address>
