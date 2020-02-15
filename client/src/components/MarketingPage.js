@@ -26,6 +26,7 @@ function MarketingPage() {
                 <Help />
                 <ContactForm />
             </div>
+            <MarketingFooter />
         </div>
     );
 }
