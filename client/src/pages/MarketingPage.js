@@ -4,7 +4,6 @@ import Card from '../components/Card';
 import marketingCards from '../utils/MarketingCardArray';
 import ContactForm from '../components/ContactForm';
 import Help from '../components/Help';
-import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
@@ -27,7 +26,6 @@ function MarketingPage() {
                 <Help />
                 <ContactForm />
             </div>
-            <MarketingFooter />
         </div>
     );
 }
