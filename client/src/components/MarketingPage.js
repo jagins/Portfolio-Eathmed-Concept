@@ -7,13 +7,24 @@ import { IconContext } from 'react-icons';
 function MarketingPage() {
     return (
         <div className='container'>
-            <img src={logo} alt='EarthMed' />
+            <div className='img-container'>
+                <img src={logo} alt='EarthMed' />
+            </div>
             <IconContext.Provider value={{ color: 'green', size: '30px', className: 'icons' }}>
                 <div className='contact-icons'>
-                    <MdPlace />
-                    <MdPhone />
-                    <FaRegClock />
-                    <FaShoppingCart />
+                    <div className='address'>
+                        <address>
+                        <MdPlace />
+                            852 WestGate St,
+                            <br/>
+                            <p>Addison, IL 60101</p>
+                        </address>
+                    </div>
+                    <div className='store-info'>
+                        <p className='info'><MdPhone />(847)607-0796</p>
+                        <p className='info'><FaRegClock /> View Hours</p>
+                        <p><FaShoppingCart />Shop Now</p>
+                    </div>
                 </div>
             </IconContext.Provider>
         </div>
