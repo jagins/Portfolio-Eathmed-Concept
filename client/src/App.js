@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import MarketingPage from './components/MarketingPage';
 import NavbarComponent from './components/Navbar';
 import './App.css';
@@ -8,7 +8,10 @@ function App() {
   return (
       <Router>
         <NavbarComponent />
-        <MarketingPage />
+
+        <Switch>
+          <Route exact path='/' component={MarketingPage}/>
+        </Switch>
       </Router>
   );
 }
