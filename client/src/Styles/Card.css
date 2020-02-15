@@ -1,0 +1,26 @@
+.card 
+{
+    width: 25%;
+}
+
+.card img
+{
+    width: 100%;
+}
+
+.card h3
+{
+    font-size: 1.5rem;
+    margin-top: 2%;
+}
+
+.card .button
+{
+   color: green;
+   font-weight: bold;
+}
+
+.card .button:hover
+{
+    cursor: pointer;
+}

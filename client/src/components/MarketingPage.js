@@ -2,6 +2,8 @@ import React from 'react';
 import CompanyInfo from './CompanyInfo';
 import Card from './Card';
 import marketingCards from '../utils/MarketingCardArray';
+import ContactForm from './ContactForm';
+import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
     return (
@@ -17,6 +19,9 @@ function MarketingPage() {
                             descritpion={card.description}
                         />)}
                 </div>
+            </div>
+            <div className='marketing-contact-section'>
+                <ContactForm/>
             </div>
         </div>
     );
