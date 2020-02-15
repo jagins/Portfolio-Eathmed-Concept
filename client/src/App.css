@@ -3,3 +3,39 @@
     margin: 0;
     padding: 0;
 }
+
+.marketing-middle-section
+{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+    
+}
+
+.card-container
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card 
+{
+    width: 25%;
+}
+
+.card img
+{
+    width: 100%;
+}
+
+.card h3
+{
+    font-size: 1.5rem;
+    margin-top: 2%;
+}
+
+.card p
+{
+    /* margin-left: 2%; */
+    
+}
