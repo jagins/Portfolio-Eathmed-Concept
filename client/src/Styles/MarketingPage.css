@@ -1,0 +1,25 @@
+.marketing-middle-section
+{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5%;
+    
+}
+
+.card-container
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.marketing-contact-section
+{
+    display: flex;
+    width: 90%;
+    margin-left: 8.5%;
+}
+
+.help
+{
+    width: 50%;
+}

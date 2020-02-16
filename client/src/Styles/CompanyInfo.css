@@ -1,0 +1,35 @@
+.img-container
+{
+    margin-top: 5%;
+}
+
+.container
+{
+    display: flex;
+}
+
+.contact-icons
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 50px;
+    margin-top: 5%;
+    width: 100%;
+}
+
+.address p
+{
+    margin-top: 0;
+    margin-left: 13%;
+    line-height: 1%;
+}
+
+.info
+{
+    line-height: 1%;
+}
+.icons
+{
+    margin-right: 5%;
+}

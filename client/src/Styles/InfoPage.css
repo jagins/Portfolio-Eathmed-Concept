@@ -1,0 +1,17 @@
+.top
+{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-left: 30%;
+}
+
+.top ul
+{
+    list-style-position: inside;
+}
+
+ul li
+{
+   text-align: left;
+}
