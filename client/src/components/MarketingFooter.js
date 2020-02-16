@@ -30,6 +30,7 @@ function MarketingFooter() {
                     <StoreInfoFooter />
                 </div>
             </div>
+            <p className='copyright'>&copy; 2020 Josh Agins</p>
         </footer>
     )
 }

@@ -1,6 +1,5 @@
 .top
 {
-    /* border: 1px solid red; */
     width: 40%;
     margin: 0 auto;
     margin-top: 2%;
@@ -10,7 +9,6 @@
 .top ul
 {
     list-style-position: inside;
-    /* border: 1px solid blue; */
 }
 
 ul li
