@@ -4,7 +4,7 @@ function MedicalConditionsPage()
 {
     return (
         <div>
-            <h1>MedicalConditonsPage</h1>
+            <h1>Qualifying Medcial Conditions</h1>
         </div>
     )
 }
