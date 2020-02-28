@@ -20,7 +20,7 @@ function OpioidProgram()
 
             <h3>When can I participate?</h3>
             <p>Hopefully soon, right now other Illinois departments must adopt new policies to allow the Opioid Alternative Pilot Program to start. Keep this page bookmarked, we will update when the program starts. You can also keep track of the official Illinois Department of Health page here –</p>
-            <a href='http://www.dph.illinois.gov/topics-services/prevention-wellness/medical-cannabis' target='_blank' rel_noopener noreferrer>
+            <a href='http://www.dph.illinois.gov/topics-services/prevention-wellness/medical-cannabis' target='_blank' rel='noopener noreferrer'>
                 http://www.dph.illinois.gov/topics-services/prevention-wellness/medical-cannabis
             </a>
         </div>
