@@ -1,4 +1,4 @@
-const medicalConitions = [
+const medicalConditions = [
     {
         title: 'ALS',
         description: 'Amyotrophic Lateral Sclerosis (ALS), also more widely known as Lou Gehrig’s disease, is a progressive neurodegenerative disorder that causes loss of muscle control and coordination along the spinal cord, brainstem and motor cortex. Although there is no cure for this debilitating illness, medical marijuana can be used to help relieve the symptoms of the disease, including: loss of appetite and chronic pain caused by muscle spasms and/or stiffness.'
@@ -40,4 +40,4 @@ const medicalConitions = [
     }
 ]
 
-export default medicalConitions;
+export default medicalConditions;

@@ -1,7 +1,7 @@
 import React from 'react';
-import MedicalConditonsArray from '../utils/MecialConditionsArray';
+import MedicalConditonsArray from '../utils/mecialConditionsArray';
 import MedicalConditionsCard from '../components/MedicalConditionsCard';
-import {otherConditions, spinalConditions} from '../utils/OtherMedicalConditions';
+import {otherConditions, spinalConditions} from '../utils/otherMedicalConditions';
 import '../Styles/InfoPage.css';
 import '../Styles/MedicalCondtions.css';
 
