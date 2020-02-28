@@ -14,7 +14,6 @@ function NavbarComponent() {
                     <Nav.Link as={Link} to='/' style={{marginLeft: '50px'}} href='/'>Home</Nav.Link>
                     <NavDropdown style={{marginLeft: '50px'}} bg='dark' title='Patient Information' id='collapseable-nav-dropdown'>
                         <NavDropdown.Item as={Link} to='/opioid-program'>Opioid Alternative Cannabis Program</NavDropdown.Item>
-                        <NavDropdown.Item as={Link} to='/select-earthmed'>Transfer/Select EarthMed As Your Dispensary</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to='/medical-conditions'>Qualifying Medical Conditions</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to='/medical-card'>Get Your Medical Marijuana Card</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to='/recreation'>Recreational Marijuana</NavDropdown.Item>
