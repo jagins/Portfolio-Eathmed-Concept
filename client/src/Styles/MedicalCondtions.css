@@ -1,0 +1,21 @@
+.conditions-list
+{
+   width: 60%;
+    margin-left: 5%;
+}
+
+.conditions-list li
+{
+    margin-top: 2%;
+}
+
+.inner-list
+{
+    width: 50%;
+    margin-left: 10%;
+}
+
+/* .inner-list li
+{
+    margin-top: 2%;
+} */

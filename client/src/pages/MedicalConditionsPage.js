@@ -3,6 +3,7 @@ import MedicalConditonsArray from '../utils/MecialConditionsArray';
 import MedicalConditionsCard from '../components/MedicalConditionsCard';
 import {otherConditions, spinalConditions} from '../utils/OtherMedicalConditions';
 import '../Styles/InfoPage.css';
+import '../Styles/MedicalCondtions.css';
 
 function MedicalConditionsPage()
 {
@@ -20,12 +21,12 @@ function MedicalConditionsPage()
                     />)}
                    <h3>Additional Medical Conditions</h3>
                    <p>The state of Illinois has approved the use of medicinal marijuana not only for the conditions listed above but also for these following conditions:</p>
-                   <ul>
+                   <ul className='conditions-list'>
                        {otherConditions.map((condition, index) =>
                        {
                            if(index === 25)
                            {
-                               return <ul>
+                               return <ul className='inner-list'>
                                    {spinalConditions.map(c =>
                                     {
                                         return <li>{c}</li>
