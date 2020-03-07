@@ -1,6 +1,7 @@
 import React from 'react';
 import stepsArray from '../utils/stepsArray';
 import '../Styles/InfoPage.css';
+import '../Styles/MedicalCardInfo.css';
 
 function MedicalCardInfo() {
     return (
