@@ -1,7 +1,7 @@
 import React from 'react';
 import CompanyInfo from '../components/CompanyInfo';
 import Card from '../components/Card';
-import marketingCards from '../utils/MarketingCardArray';
+import marketingCards from '../utils/marketingCardArray';
 import ContactForm from '../components/ContactForm';
 import Help from '../components/Help';
 import '../Styles/MarketingPage.css';
