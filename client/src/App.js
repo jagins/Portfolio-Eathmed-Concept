@@ -6,6 +6,7 @@ import MedicalConditionsPage from './pages/MedicalConditionsPage';
 import MedicalCardInfo from './pages/MedicalCardInfoPage';
 import RecreationPage from './pages/RecreationPage';
 import FaqPage from './pages/FaqPage';
+import PlantsPage from './pages/PlantsPage'
 import NavbarComponent from './components/Navbar';
 import MarketingFooter from './components/MarketingFooter';
 import './App.css';
@@ -22,6 +23,7 @@ function App() {
           <Route path='/medical-card' component={MedicalCardInfo} />
           <Route path='/recreation' component={RecreationPage} />
           <Route path='/faq' component={FaqPage} />
+          <Route path='/plants' component={PlantsPage} />
         </Switch>
         <MarketingFooter />
       </Router>
