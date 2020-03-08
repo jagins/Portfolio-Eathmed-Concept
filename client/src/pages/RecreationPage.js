@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styles/InfoPage.css';
 
-function Recreation()
+function RecreationPage()
 {
     return (
         <div className='top'>
@@ -25,4 +25,4 @@ function Recreation()
     )
 }
 
-export default Recreation;
+export default RecreationPage;
