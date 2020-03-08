@@ -4,7 +4,7 @@ import '../Styles/InfoPage.css';
 function HoursPage()
 {
     return (
-        <div>
+        <div className='top'>
             <h1>Hours of operation</h1>
             <p>Sunday – 12pm to 5pm (Medical Only)</p>
             <p>Monday -11am to 7pm</p>

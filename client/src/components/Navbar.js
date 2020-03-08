@@ -27,7 +27,7 @@ function NavbarComponent() {
                     <Nav.Link style={{marginLeft: '50px'}} as={Link} to='/contact'>Contact</Nav.Link>
                   <IconContext.Provider value={{size: '30px'}}>
                         <div className='social-icons' style={{marginLeft: '10%', marginTop: '0.5%'}}>
-                            <FaTwitter/>
+                            <FaTwitter className='facebook'/>
                             <FaFacebookSquare className='twitter'/>
                         </div>
                    </IconContext.Provider>
