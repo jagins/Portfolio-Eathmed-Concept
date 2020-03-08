@@ -5,6 +5,7 @@ import OpioidProgram from './pages/OpioidProgram';
 import MedicalConditionsPage from './pages/MedicalConditionsPage';
 import MedicalCardInfo from './pages/MedicalCardInfoPage';
 import RecreationPage from './pages/RecreationPage';
+import FaqPage from './pages/FaqPage';
 import NavbarComponent from './components/Navbar';
 import MarketingFooter from './components/MarketingFooter';
 import './App.css';
@@ -20,6 +21,7 @@ function App() {
           <Route path='/medical-conditions' component={MedicalConditionsPage}/>
           <Route path='/medical-card' component={MedicalCardInfo} />
           <Route path='/recreation' component={RecreationPage} />
+          <Route path='/faq' component={FaqPage} />
         </Switch>
         <MarketingFooter />
       </Router>
