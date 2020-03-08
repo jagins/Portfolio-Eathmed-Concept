@@ -10,7 +10,7 @@ function NavbarComponent() {
         <Navbar bg='dark' variant='dark' expand='lg'>
             <Navbar.Toggle aria-controls='responsive-navbar-nav' />
             <Navbar.Collapse style={{margin: '0'}}id='responsive-navbar-nav'>
-                <Nav style={{margin: '0 auto'}}>
+                <Nav style={{marginLeft: '26.5%'}}>
                     <Nav.Link as={Link} to='/' style={{marginLeft: '50px'}} href='/'>Home</Nav.Link>
                     <NavDropdown style={{marginLeft: '50px'}} bg='dark' title='Patient Information' id='collapseable-nav-dropdown'>
                         <NavDropdown.Item as={Link} to='/opioid-program'>Opioid Alternative Cannabis Program</NavDropdown.Item>
@@ -23,7 +23,6 @@ function NavbarComponent() {
                         <NavDropdown.Item as={Link} to='/plants'>Plants</NavDropdown.Item>
                         <NavDropdown.Item as={Link} to='/products'>Products</NavDropdown.Item>
                     </NavDropdown>
-                    <Nav.Link style={{marginLeft: '50px'}} as={Link} to='/reviews'>Reviews</Nav.Link>
                     <Nav.Link style={{marginLeft: '50px'}} as={Link} to='/store'>Store</Nav.Link>
                     <Nav.Link style={{marginLeft: '50px'}} as={Link} to='/contact'>Contact</Nav.Link>
                   <IconContext.Provider value={{size: '30px'}}>
