@@ -33,7 +33,7 @@ const faqArray = [
     },
     {
         title: 'How should I select my medicine?',
-        desc: 'his is where our Earthmed team can help you. Our medical cannabis experts listen to your needs and address them on a patient by patient basis. We are extremely knowledgeable and help guide you through this process every step of the way. Since this process is vastly different for each patient, typically a patient will start by deciding whether they are looking for a Sativa, Indica or Hybrid strain. The effects produced by each strain of medical cannabis will differ depending upon the cannabinoid and terpene profiles. This is something that the professionals at Earthmed are happy to assist you with.'
+        desc: 'This is where our Earthmed team can help you. Our medical cannabis experts listen to your needs and address them on a patient by patient basis. We are extremely knowledgeable and help guide you through this process every step of the way. Since this process is vastly different for each patient, typically a patient will start by deciding whether they are looking for a Sativa, Indica or Hybrid strain. The effects produced by each strain of medical cannabis will differ depending upon the cannabinoid and terpene profiles. This is something that the professionals at Earthmed are happy to assist you with.'
     },
     {
         title: 'When will you be opening?',
