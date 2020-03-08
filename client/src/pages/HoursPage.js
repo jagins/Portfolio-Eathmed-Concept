@@ -5,7 +5,7 @@ function HoursPage()
 {
     return (
         <div className='top'>
-            <h1>Hours of operation</h1>
+            <h1>Hours of Operation</h1>
             <div className='hours'>
                 <p>Sunday – 12pm to 5pm (Medical Only)</p>
                 <p>Monday -11am to 7pm</p>
