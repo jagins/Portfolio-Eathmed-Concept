@@ -1,5 +1,6 @@
 import React from 'react';
 import '../Styles/InfoPage.css';
+
 function Recreation()
 {
     return (
