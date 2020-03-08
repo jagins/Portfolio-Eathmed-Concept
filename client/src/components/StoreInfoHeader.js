@@ -18,8 +18,10 @@ function StoreInfoHeader() {
                 </div>
                 <div className='store-info'>
                     <p className='info'><MdPhone />(847) 607-0796</p>
-                    <p className='info'><FaRegClock /> View Hours</p>
-                    <Link to='/store'><FaShoppingCart />Shop Now</Link>
+                    <Link to='/hours' className='icon'><FaRegClock />View Hours</Link>
+                    <br/>
+                    <br/>
+                    <Link to='/store' className='icon'><FaShoppingCart />Shop Now</Link>
                 </div>
             </div>
         </IconContext.Provider>

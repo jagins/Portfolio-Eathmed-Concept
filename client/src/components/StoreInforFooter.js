@@ -18,9 +18,9 @@ function StoreInfoFooter()
                     </address>
                 </div>
                 <div className='store-info'>
-                    <p className='info'><MdPhone />(847) 607-0796</p>
+                    <p className='info' style={{color: '#999C9F'}}><MdPhone />(847) 607-0796</p>
                     <p className='info'><FaRegClock /> 
-                        <span>
+                        <span style={{color: '#999C9F'}}>
                             Sun - 12pm to 5pm (Medical Only)
                         </span>
                         <span className='hours'>Mon - 11am to 7pm</span>
@@ -30,7 +30,7 @@ function StoreInfoFooter()
                         <span className='hours'>Fri - 11am to 8pm</span>
                         <span className='hours'>Sat - 11am to 8pm</span>
                     </p>
-                    <p className='info'><FaEnvelope/>support@earthmed.com</p>
+                    <p className='info' style={{color: '#999C9F'}}><FaEnvelope/>support@earthmed.com</p>
                 </div>
             </div>
         </IconContext.Provider>
