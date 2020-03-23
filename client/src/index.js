@@ -7,9 +7,9 @@ import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 
 const client = new ApolloClient({
-    uri:'https://earthmed-hasura.herokuapp.com/v1/graphql',
+    uri: process.env.REACT_APP_URL ,
     headers: {
-        'x-hasura-admin-secret': 'pQzhQq5C4Jhg6Mc0FPxc'
+        'x-hasura-admin-secret': process.env.REACT_APP_ADMIN_SECRET
     }
 });
 
