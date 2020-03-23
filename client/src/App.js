@@ -13,6 +13,7 @@ import NavbarComponent from './components/Navbar';
 import MarketingFooter from './components/MarketingFooter';
 import Store from './pages/Store';
 import ProductDetails from './components/ProductDetails';
+import BrandDetails from './components/BrandDetails';
 import './App.css';
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path='/hours' component={HoursPage} />
           <Route exact path='/store' component={Store} />
           <Route path='/store/products/:id' component={ProductDetails} />
+          <Route path='/store/brands/:name' component={BrandDetails}/>
         </Switch>
         <MarketingFooter />
       </Router>
