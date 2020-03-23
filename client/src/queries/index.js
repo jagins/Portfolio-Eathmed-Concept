@@ -9,3 +9,12 @@ export const GET_FEATURED = gql`
         }
     }
 `;
+
+export const GET_BRANDS = gql`
+    {
+        companies {
+            id
+            company_name
+        }
+    }
+`;
