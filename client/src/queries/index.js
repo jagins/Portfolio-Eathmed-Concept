@@ -18,3 +18,16 @@ export const GET_BRANDS = gql`
         }
     }
 `;
+export function GET_PRODUCT_BY_ID(id)
+{
+    const PRODUCT_BY_ID = gql`
+    {
+        products(where: {id: {_eq: ${id}}}) {
+            price
+            product_name
+        }
+    }
+`;
+
+    return PRODUCT_BY_ID;
+}
