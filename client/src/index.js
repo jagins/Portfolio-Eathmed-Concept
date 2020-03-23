@@ -7,7 +7,7 @@ import ApolloClient from 'apollo-boost';
 import {ApolloProvider} from 'react-apollo';
 
 const client = new ApolloClient({
-    uri: process.env.REACT_APP_URL ,
+    uri: process.env.REACT_APP_URL,
     headers: {
         'x-hasura-admin-secret': process.env.REACT_APP_ADMIN_SECRET
     }
