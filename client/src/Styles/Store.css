@@ -24,6 +24,7 @@
 .brand
 {
     width: 18%;
+    cursor: pointer;
 }
 
 .title
