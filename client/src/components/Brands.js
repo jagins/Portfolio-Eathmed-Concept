@@ -7,11 +7,14 @@ function Brands()
     const {loading, data, error} = useQuery(GET_BRANDS);
     return (
         <div>
+            <h3 className='title'>Brands</h3>
             {loading ? <p>Loading...</p> : (
-                data.companies.map(company =>
-                    <div className='card'>
+               <div className='brands'>
+                  {data.companies.map(company =>
+                    <div className='brand' key={company.id}>
                         <h3>{company.company_name}</h3>
-                    </div>)
+                    </div>)} 
+               </div>
             )}
         </div>
     )
