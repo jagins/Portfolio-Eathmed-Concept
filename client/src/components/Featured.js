@@ -2,7 +2,7 @@ import React from 'react';
 import {GET_FEATURED} from '../queries';
 import {useQuery} from '@apollo/react-hooks';
 import ProductCard from '../components/ProductCard';
-import '../Styles/Card.css';
+import '../Styles/Store.css';
 
 function Featured()
 {

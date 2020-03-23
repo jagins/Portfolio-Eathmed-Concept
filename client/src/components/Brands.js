@@ -1,6 +1,7 @@
 import React from 'react';
 import {GET_BRANDS} from '../queries';
 import {useQuery} from '@apollo/react-hooks';
+import '../Styles/Store.css';
 
 function Brands()
 {

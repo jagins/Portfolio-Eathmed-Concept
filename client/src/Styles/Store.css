@@ -1,0 +1,35 @@
+.tabs
+{
+    justify-content: left;
+    margin: 2%;
+}
+
+.logo
+{
+    text-align: center;
+    border: 1px solid red;
+    margin: 2%;
+}
+
+.featured-products,
+.brands
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.product-card,
+.brand
+{
+    width: 18%;
+}
+
+.title
+{
+    text-align: center;
+    margin-top: 1%;
+}
+

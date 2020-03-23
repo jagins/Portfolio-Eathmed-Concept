@@ -24,24 +24,3 @@
 {
     cursor: pointer;
 }
-
-.featured-products,
-.brands
-{
-    display: flex;
-    justify-content: space-evenly;
-    width: 90%;
-    text-align: center;
-    margin-top: 2%;
-}
-
-.product-card,
-.brand
-{
-    width: 18%;
-}
-
-.title
-{
-    text-align: center;
-}
