@@ -15,7 +15,7 @@ function ProductDetails()
             <div>
                 <h3>{data.products[0].product_name}</h3>
                 <p>{data.products[0].price}</p>
-        </div>
+            </div>
         )}
     </div>
     );
