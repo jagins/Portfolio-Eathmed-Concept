@@ -31,3 +31,15 @@ export function GET_PRODUCT_BY_ID(id)
 
     return PRODUCT_BY_ID;
 }
+
+export const GET_COMPANY_PRODUCTS = gql`
+    query getCompany_products($name: String!) {
+        companies(where: {company_name: {_eq: $name}}) {
+            products {
+                price
+                product_name
+                id
+            }
+        }
+    }
+`;
