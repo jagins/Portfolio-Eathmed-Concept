@@ -11,6 +11,7 @@ import HoursPage from './pages/HoursPage';
 import ProductsPage from './pages/ProductsPage';
 import NavbarComponent from './components/Navbar';
 import MarketingFooter from './components/MarketingFooter';
+import Store from './pages/Store';
 import './App.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path='/plants' component={PlantsPage} />
           <Route path='/products' component={ProductsPage} />
           <Route path='/hours' component={HoursPage} />
+          <Route path='/store' component={Store} />
         </Switch>
         <MarketingFooter />
       </Router>
