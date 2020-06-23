@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MdPlace, MdPhone } from 'react-icons/md';
 import { FaRegClock, FaShoppingCart } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
@@ -17,8 +18,10 @@ function StoreInfoHeader() {
                 </div>
                 <div className='store-info'>
                     <p className='info'><MdPhone />(847) 607-0796</p>
-                    <p className='info'><FaRegClock /> View Hours</p>
-                    <p><FaShoppingCart />Shop Now</p>
+                    <Link to='/hours' className='icon'><FaRegClock />View Hours</Link>
+                    <br/>
+                    <br/>
+                    <Link to='/store' className='icon'><FaShoppingCart />Shop Now</Link>
                 </div>
             </div>
         </IconContext.Provider>

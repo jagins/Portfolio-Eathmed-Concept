@@ -6,6 +6,7 @@
 .container
 {
     display: flex;
+    color: green;
 }
 
 .contact-icons
@@ -16,6 +17,7 @@
     margin-left: 50px;
     margin-top: 5%;
     width: 100%;
+    cursor: pointer;
 }
 
 .address p
@@ -28,8 +30,19 @@
 .info
 {
     line-height: 1%;
+    color: green;
 }
+
 .icons
 {
     margin-right: 5%;
+}
+
+.icon{
+    color: green;
+}
+
+.icon:hover
+{
+    color: green;
 }
