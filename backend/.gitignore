@@ -115,4 +115,4 @@ dist
 .pnp.*
 
 # database file
-.db3
+*.db3
