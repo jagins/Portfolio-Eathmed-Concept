@@ -9,7 +9,7 @@ function getAllProducts()
 // get products by id
 function getProductsById(id)
 {
-    return db('products').where('id', id)   
+    return db('products').where('id', id).first(); 
 }
 
 module.exports = {

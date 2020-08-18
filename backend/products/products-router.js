@@ -13,4 +13,19 @@ router.get('/', (req, res) => {
     }))
 });
 
+router.get('/:id', (req, res) => {
+    products.getProductsById(req.params.id)
+    .then(product => {
+        if(product)
+            res.status(200).json(product);
+        else
+            res.status(404).json({
+                errorMessage: `Could not find product with id of ${req.params.id}`
+            })
+    })
+    .catch(err => res.status(500).json({
+        errorMessage: `Could not retrieve product with id of ${req.params.id}`
+    }))
+})
+
 module.exports = router;
