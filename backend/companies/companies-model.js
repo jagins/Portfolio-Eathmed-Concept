@@ -6,6 +6,12 @@ function getAllCompanies()
     return db('companies');
 }
 
+function getCompanyProducts(id)
+{
+    return db('products').where('company_id', id)
+}
+
 module.exports = {
-    getAllCompanies
+    getAllCompanies,
+    getCompanyProducts
 }
