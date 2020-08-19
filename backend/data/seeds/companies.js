@@ -5,11 +5,10 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('companies').insert([
-        {id: 1, company_name: 'Cresco'},
-        {id: 2, company_name: 'Verano'},
-        {id: 3, company_name: 'Avexia'},
-        {id: 4, company_name: 'Ascend'},
-        {id: 5, company_name: 'PTS'}
+        {company_name: 'Cresco'},
+        {company_name: 'Verano'},
+        {company_name: 'Ascend'},
+        {company_name: 'PTS'}
       ]);
     });
 };
