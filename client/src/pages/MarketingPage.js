@@ -4,10 +4,13 @@ import Card from '../components/Card';
 import marketingCards from '../utils/marketingCardArray';
 import ContactForm from '../components/ContactForm';
 import Help from '../components/Help';
+import NavbarComponent from '../components/Navbar';
 import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
     return (
+        <section>
+            <NavbarComponent/>
         <div className='marketing'>
             <CompanyInfo />
             <div className='marketing-middle-section'>
@@ -27,6 +30,7 @@ function MarketingPage() {
                 <ContactForm />
             </div>
         </div>
+        </section>
     );
 }
 

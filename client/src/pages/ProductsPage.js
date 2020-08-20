@@ -1,9 +1,12 @@
 import React from 'react';
 import '../Styles/InfoPage.css';
+import NavbarComponent from '../components/Navbar';
 
 function ProductsPage()
 {
     return (
+        <section>
+            <NavbarComponent/>
         <div className='products top'>
             <h1>Products</h1>
             <p>EarthMed is dedicated to providing the highest quality cannabis to our customers. There are several different ways to take medical cannabis available.</p>
@@ -14,6 +17,7 @@ function ProductsPage()
                 <li>Edibles / Oral – Patients can take Cannabis orally from tablets that are created in a laboratory.</li>
             </ul>
         </div>
+        </section>
     )
 }
 

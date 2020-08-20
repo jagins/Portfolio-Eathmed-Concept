@@ -1,9 +1,12 @@
 import React from 'react';
+import NavbarComponent from '../components/Navbar';
 import '../Styles/InfoPage.css';
 
 function RecreationPage()
 {
     return (
+        <section>
+            <NavbarComponent />
         <div className='top'>
             <h1>Recreational Marijuana</h1>
 
@@ -22,6 +25,7 @@ function RecreationPage()
             <h3>When can I particpate</h3>
             <p>Hopefully January 1, 2020 but there are still a few state regulations that need to be finalized before moving forward. Keep this page bookmarked, we will update when the program starts.</p>
         </div>
+        </section>
     )
 }
 
