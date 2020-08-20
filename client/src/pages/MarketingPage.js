@@ -5,6 +5,7 @@ import marketingCards from '../utils/marketingCardArray';
 import ContactForm from '../components/ContactForm';
 import Help from '../components/Help';
 import NavbarComponent from '../components/Navbar';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
@@ -30,6 +31,7 @@ function MarketingPage() {
                 <ContactForm />
             </div>
         </div>
+        <MarketingFooter />
         </section>
     );
 }

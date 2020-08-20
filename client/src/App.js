@@ -10,7 +10,7 @@ import PlantsPage from './pages/PlantsPage'
 import HoursPage from './pages/HoursPage';
 import ProductsPage from './pages/ProductsPage';
 //import NavbarComponent from './components/Navbar';
-import MarketingFooter from './components/MarketingFooter';
+// import MarketingFooter from './components/MarketingFooter';
 import Store from './pages/Store';
 import './App.css';
 
@@ -32,7 +32,6 @@ function App() {
           {/* <Route path='/store/products/:id' component={ProductDetails} /> */}
           {/* <Route path='/store/brands/:name' component={BrandDetails}/> */}
         </Switch>
-        <MarketingFooter />
       </Router>
   );
 }

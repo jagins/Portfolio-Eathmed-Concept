@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarComponent from '../components/Navbar';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/InfoPage.css';
 
 function OpioidProgram()
@@ -27,6 +28,7 @@ function OpioidProgram()
                 http://www.dph.illinois.gov/topics-services/prevention-wellness/medical-cannabis
             </a>
         </div>
+        <MarketingFooter/>
         </section>
     );
 }

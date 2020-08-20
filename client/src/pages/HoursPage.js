@@ -1,9 +1,13 @@
 import React from 'react';
+import NavbarComponent from '../components/Navbar';
 import '../Styles/InfoPage.css';
+import MarketingFooter from '../components/MarketingFooter';
 
 function HoursPage()
 {
     return (
+        <section>
+            <NavbarComponent/>
         <div className='top'>
             <h1>Hours of Operation</h1>
             <div className='hours'>
@@ -16,6 +20,8 @@ function HoursPage()
                 <p>Saturday – 11am to 8pm</p>
             </div>
         </div>
+        <MarketingFooter/>
+        </section>
     )
 }
 
