@@ -13,7 +13,8 @@ exports.up = function(knex) {
         table.string('product_name');
         table.integer('price');
         table.string('product_type');
-        table.float('thc_amount');
+        table.float('thca').defaultTo(0);
+        table.float('cbd').defaultTo(0);
         table.string('image');
         table.string('description');
         table.integer('company_id')
