@@ -15,6 +15,7 @@ exports.up = function(knex) {
         table.string('product_type');
         table.float('thca').defaultTo(0);
         table.float('cbd').defaultTo(0);
+        table.string('strain_type');
         table.string('image');
         table.string('description');
         table.integer('company_id')
