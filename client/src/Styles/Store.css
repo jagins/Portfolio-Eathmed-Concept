@@ -25,3 +25,13 @@
     margin-bottom: auto;
     margin-right: 1%;
 }
+
+.store .sidebar {
+    border: 1px solid gray;
+    width: 20%;
+}
+
+.store .sidebar div {
+    margin-top: 5%;
+    margin-left: 5%;
+}
