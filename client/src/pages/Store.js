@@ -9,7 +9,7 @@ function Store()
     return (
         <section className='store'>
             <div className='login'>
-                <Button>Login/Register</Button>
+                <Button variant='success'>Login/Register</Button>
             </div>
             <img src={logo} alt='Earthmed Logo'/>
             <StoreHeader/>
