@@ -31,7 +31,23 @@
     width: 20%;
 }
 
-.store .sidebar div {
-    margin-top: 5%;
-    margin-left: 5%;
+.store .sidebar .types {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.store .sidebar .types .hybrid {
+    color: white;
+    background-color: green;
+}
+
+.store .sidebar .types .indica {
+    color: white;
+    background-color: blue;
+}
+
+.store .sidebar .types .sativa {
+    color: white;
+    background-color: red;
 }

@@ -3,6 +3,7 @@ import logo from '../images/earthmed-site-logo-bigger.png';
 import Button from 'react-bootstrap/Button';
 import StoreHeader from '../components/StoreHeader';
 import StoreSidebar from '../components/StoreSidebar';
+import StoreProducts from '../components/StoreProducts';
 import '../Styles/Store.css';
 
 function Store()
@@ -15,6 +16,7 @@ function Store()
             <img src={logo} alt='Earthmed Logo'/>
             <StoreHeader/>
             <StoreSidebar/>
+            <StoreProducts/>
         </section>
     )
 }
