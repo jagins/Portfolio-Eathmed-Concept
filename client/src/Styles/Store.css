@@ -104,7 +104,17 @@
     margin-left: 2%;
 }
 
-.store .product-container .product-card .product-chip .type {
+.store .product-container .product-card .product-chip .Hybrid {
     background-color: green;
+    color: white;
+}
+
+.store .product-container .product-card .product-chip .Indica {
+    background-color: blue;
+    color: white;
+}
+
+.store .product-container .product-card .product-chip .Sativa {
+    background-color: red;
     color: white;
 }

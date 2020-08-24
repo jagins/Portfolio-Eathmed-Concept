@@ -9,7 +9,7 @@ function StoreProductCard(props)
     console.log(props.product);
     return (
             <div className='product-card'>
-                <Chip className='product-chip' label={props.product.strain_type} variant='outlined' clickable avatar={<Avatar className='type'>{props.product.strain_type[0]}</Avatar>} />
+                <Chip className='product-chip' label={props.product.strain_type} variant='outlined' avatar={<Avatar className={props.product.strain_type}>{props.product.strain_type[0]}</Avatar>} />
                 <img src={props.product.image} alt='product image'/>
                 <hr />
                 <div className='product-info'>
