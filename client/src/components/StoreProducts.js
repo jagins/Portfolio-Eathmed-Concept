@@ -1,10 +1,11 @@
 import React from 'react';
+import StoreProductCard from './StoreProductCard';
 
 function StoreProducts()
 {
     return (
-        <div>
-            insert store products here
+        <div className='product-container'>
+            <StoreProductCard/>
         </div>
     )
 }

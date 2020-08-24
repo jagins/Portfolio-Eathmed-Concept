@@ -29,12 +29,13 @@
 .store .sidebar {
     border: 1px solid gray;
     width: 20%;
+    height: 100%;
 }
 
 .store .sidebar .types {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 90%;
 }
 
 .store .sidebar .types .hybrid {
@@ -50,4 +51,55 @@
 .store .sidebar .types .sativa {
     color: white;
     background-color: red;
+}
+
+.store .showcase {
+    /* border: 1px solid red; */
+    display: flex;
+}
+
+.store .product-container {
+    /* border: 1px solid blue; */
+    width: 90%;
+    margin-left: 1%;
+}
+.store .product-container .product-card{
+    border: 1px solid green;
+    width: 30%;
+    border-radius: 1%;
+}
+.store .product-container .product-card img {
+    width: 60%;
+}
+
+.store .product-container .product-card .product-info {
+    text-align: center;
+}
+
+.store .product-container .product-card p {
+    color: black;
+}
+.store .product-container .product-card .product-icon {
+    color: black
+}
+
+.store .product-container .product-card .product-card-bottom {
+    margin-top: 5%;
+    margin-bottom: 2%;
+    display: flex;
+    width: 100%;
+}
+
+.store .product-container .product-card .product-type{
+    margin-right: 60%;
+}
+
+.store .product-container .product-card .product-chip {
+    margin-top: 1%;
+    margin-left: 2%;
+}
+
+.store .product-container .product-card .product-chip .type {
+    background-color: green;
+    color: white;
 }

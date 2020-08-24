@@ -15,8 +15,11 @@ function Store()
             </div>
             <img src={logo} alt='Earthmed Logo'/>
             <StoreHeader/>
-            <StoreSidebar/>
-            <StoreProducts/>
+           
+            <div className='showcase'>
+                <StoreSidebar/>
+                <StoreProducts/>
+            </div>
         </section>
     )
 }
