@@ -11,7 +11,14 @@ export const reducer = (state = initialState, action) =>
         case 'GET_PRODUCTS':
             return {
                 ...state,
+                isLoading: true,
                 products: action.payload
+            }
+        
+        case 'SUCCESS':
+            return {
+                ...state,
+                isLoading: false
             }
         default:
             return state;

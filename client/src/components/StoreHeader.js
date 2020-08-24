@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import {Button, Dropdown} from 'react-bootstrap';
-function StoreHeader()
+import {connect} from 'react-redux';
+
+function StoreHeader(props)
 {
     const [menu, setMenu] = useState('Flower');
+    const {isLoading, products} = props
     return (
         <header className='store-header'>
             <Dropdown>
@@ -18,9 +21,16 @@ function StoreHeader()
                 </Dropdown.Menu>
             </Dropdown>
 
-            <p>Showing 24 results</p>
+        {!isLoading && products.length > 0 ? <p>Showing {products.length} results</p> : <p>Showing 0 results</p>}
         </header>
     )
 }
 
-export default StoreHeader;
+const mapStateToProps = state => {
+    return {
+        isLoading: state.isLoading,
+        products: state.products
+    }
+}
+
+export default connect(mapStateToProps, {})(StoreHeader);

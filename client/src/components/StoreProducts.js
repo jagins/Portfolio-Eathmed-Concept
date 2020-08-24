@@ -5,13 +5,15 @@ import {getProducts} from '../actions';
 
 function StoreProducts(props)
 {
-    const {products, getProducts} = props
+    const {isLoading, products, getProducts} = props
+    
     useEffect(() => {
         getProducts()
     }, [getProducts])
+    
     return (
         <div className='product-container'>
-            {products.length > 0 && products.map((product, id) => (
+            {!isLoading && products.length > 0 && products.map((product, id) => (
                 <StoreProductCard key={id} product={product}/>
             ))}
            
@@ -21,7 +23,7 @@ function StoreProducts(props)
 
 const mapStateToProps = state => {
     return {
-        // isLoading: state.isLoading,
+        isLoading: state.isLoading,
         products: state.products,
         // error: state.error
     }
