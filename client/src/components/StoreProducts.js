@@ -1,16 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import StoreProductCard from './StoreProductCard';
-import {testArray} from '../utils/testProducts';
-function StoreProducts()
-{
-    const [products, setProducts] = useState([]);
+import {connect} from 'react-redux';
+import {getProducts} from '../actions';
 
+function StoreProducts(props)
+{
+    const {products, getProducts} = props
     useEffect(() => {
-        setProducts(testArray.filter(i => i.product_type === 'Flower'))
-    }, [])
+        getProducts()
+    }, [getProducts])
     return (
         <div className='product-container'>
-            {products.map((product, id) => (
+            {products.length > 0 && products.map((product, id) => (
                 <StoreProductCard key={id} product={product}/>
             ))}
            
@@ -18,4 +19,12 @@ function StoreProducts()
     )
 }
 
-export default StoreProducts;
+const mapStateToProps = state => {
+    return {
+        // isLoading: state.isLoading,
+        products: state.products,
+        // error: state.error
+    }
+}
+
+export default connect(mapStateToProps, {getProducts})(StoreProducts);
