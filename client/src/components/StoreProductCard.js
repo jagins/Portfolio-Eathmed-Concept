@@ -10,7 +10,7 @@ function StoreProductCard(props)
     return (
             <div className='product-card'>
                 <Chip className='product-chip' label={props.product.strain_type} variant='outlined' avatar={<Avatar className={props.product.strain_type}>{props.product.strain_type[0]}</Avatar>} />
-                <img src={props.product.image} alt='product image'/>
+                <img src={props.product.image} alt={props.product.name}/>
                 <hr />
                 <div className='product-info'>
                     <h5>{props.product.product_name}</h5>
