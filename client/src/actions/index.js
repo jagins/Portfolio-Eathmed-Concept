@@ -15,6 +15,7 @@ export const filterType = type => dispatch =>
 
 export const FilterCurrentProducts = type => dispatch =>
 {
+    dispatch({type: 'GET_PRODUCTS', payload: testArray});
     dispatch({type: 'CHANGE_STRAIN_TYPE', payload: type});
     dispatch({type: 'SUCCESS'});
 }

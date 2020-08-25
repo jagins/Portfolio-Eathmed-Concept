@@ -6,7 +6,7 @@ import {filterType} from '../actions';
 function StoreHeader(props)
 {
     const [menu, setMenu] = useState('Flower');
-    const {isLoading, products, filterType} = props;
+    const {isLoading, products, filterType, productType} = props;
 
     useEffect(() => {
         filterType(menu)
@@ -36,7 +36,8 @@ function StoreHeader(props)
 const mapStateToProps = state => {
     return {
         isLoading: state.isLoading,
-        products: state.products
+        products: state.products,
+        productType: state.productType
     }
 }
 
