@@ -44,10 +44,6 @@ function StoreSidebar(props)
                 <h4>Brand</h4>
                 <FormGroup row>
                     {brands.map(brand => <FormControlLabel key={brand} control={<Checkbox/>} label={brand}/> )}
-                    {/* <FormControlLabel control={<Checkbox/>} label='Cresco'/> */}
-                    {/* <FormControlLabel control={<Checkbox/>} label='Ozone'/>
-                    <FormControlLabel control={<Checkbox/>} label='High Supply'/>
-                    <FormControlLabel control={<Checkbox/>} label='Verano'/> */}
                 </FormGroup>
             
             </div>
