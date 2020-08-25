@@ -20,6 +20,13 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false
             }
+        
+        case 'CHANGE_TYPE': 
+            return {
+                ...state,
+                isLoading: true,
+                products: state.products.filter(product => product.product_type === action.payload)
+            }
         default:
             return state;
     }
