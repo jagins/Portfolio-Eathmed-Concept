@@ -12,17 +12,23 @@ function StoreSidebar(props)
     const [typeFilter, setTypeFilter] = useState(null);
     const {FilterCurrentProducts, products} = props;
     const uniqueBrands = new Set();
-    let brands = [];
+    const uniqueSizes = new Set();
+    let brands = []; 
+    let sizes = [];
 
     if(products.length > 0)
     {
         for(let i = 0; i < products.length; i++)
         {
-            if(!(products[i] in uniqueBrands))
+            if(!(products[i].company_id in uniqueBrands))
                 uniqueBrands.add(products[i].company_id);
+            
+            if(!(products[i].size in uniqueSizes))
+                uniqueSizes.add(products[i].size);
         }
 
         brands = Array.from(uniqueBrands);
+        sizes = Array.from(uniqueSizes);
     }
 
     useEffect(() => {
@@ -53,9 +59,7 @@ function StoreSidebar(props)
             <div>
                 <h4>Size</h4>
                 <FormGroup row>
-                    <FormControlLabel control={<Checkbox/>} label='14g'/>
-                    <FormControlLabel control={<Checkbox/>} label='3.5g'/>
-                    <FormControlLabel control={<Checkbox/>} label='7g'/>
+                    {sizes.map(size => <FormControlLabel control={<Checkbox/>} label={`${size}g`}/>)}
                 </FormGroup>
             </div>
 
