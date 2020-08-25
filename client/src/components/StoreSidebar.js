@@ -14,7 +14,7 @@ function StoreSidebar(props)
 
     useEffect(() => {
         FilterCurrentProducts(typeFilter)
-    }, [typeFilter])
+    }, [typeFilter, FilterCurrentProducts])
 
     return (
         <div className='sidebar'>
