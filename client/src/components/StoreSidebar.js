@@ -10,7 +10,20 @@ import {connect} from 'react-redux';
 function StoreSidebar(props)
 {
     const [typeFilter, setTypeFilter] = useState(null);
-    const {FilterCurrentProducts} = props;
+    const {FilterCurrentProducts, products} = props;
+    const uniqueBrands = new Set();
+    let brands = [];
+
+    if(products.length > 0)
+    {
+        for(let i = 0; i < products.length; i++)
+        {
+            if(!(products[i] in uniqueBrands))
+                uniqueBrands.add(products[i].company_id);
+        }
+
+        brands = Array.from(uniqueBrands);
+    }
 
     useEffect(() => {
         FilterCurrentProducts(typeFilter)
@@ -30,10 +43,11 @@ function StoreSidebar(props)
             <div>
                 <h4>Brand</h4>
                 <FormGroup row>
-                    <FormControlLabel control={<Checkbox/>} label='Cresco'/>
-                    <FormControlLabel control={<Checkbox/>} label='Ozone'/>
+                    {brands.map(brand => <FormControlLabel key={brand} control={<Checkbox/>} label={brand}/> )}
+                    {/* <FormControlLabel control={<Checkbox/>} label='Cresco'/> */}
+                    {/* <FormControlLabel control={<Checkbox/>} label='Ozone'/>
                     <FormControlLabel control={<Checkbox/>} label='High Supply'/>
-                    <FormControlLabel control={<Checkbox/>} label='Verano'/>
+                    <FormControlLabel control={<Checkbox/>} label='Verano'/> */}
                 </FormGroup>
             
             </div>
@@ -54,7 +68,9 @@ function StoreSidebar(props)
 }
 
 const mapStateToProps = state => {
-    return state;
+    return {
+        products: state.products
+    };
 }
 
 export default connect(mapStateToProps, {FilterCurrentProducts})(StoreSidebar);
