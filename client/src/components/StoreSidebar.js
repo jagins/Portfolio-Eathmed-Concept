@@ -49,7 +49,7 @@ function StoreSidebar(props)
             <div>
                 <h4>Brand</h4>
                 <FormGroup row>
-                    {brands.map(brand => <FormControlLabel key={brand} control={<Checkbox/>} label={brand}/> )}
+                    {brands.map((brand, index) => <FormControlLabel key={index} control={<Checkbox/>} label={brand}/> )}
                 </FormGroup>
             
             </div>
@@ -59,7 +59,7 @@ function StoreSidebar(props)
             <div>
                 <h4>Size</h4>
                 <FormGroup row>
-                    {sizes.map(size => <FormControlLabel control={<Checkbox/>} label={`${size}g`}/>)}
+                    {sizes.map((size, index) => <FormControlLabel key={index} control={<Checkbox/>} label={`${size}g`}/>)}
                 </FormGroup>
             </div>
 
