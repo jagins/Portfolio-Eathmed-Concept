@@ -10,7 +10,7 @@ function StoreHeader(props)
 
     useEffect(() => {
         filterType(menu)
-    }, [menu])
+    }, [menu, filterType])
 
     console.log(products);
     return (
