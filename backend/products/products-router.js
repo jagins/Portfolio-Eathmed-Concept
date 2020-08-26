@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
     }
     else
     {
-        products.getAllProducts()
+        products.getAllProducts(req.query.product_type)
         .then(products => res.status(200).json(products))
         .catch(err => res.status(500).json({
             errorMessage: 'Could not retrieve products from the db'

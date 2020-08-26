@@ -1,9 +1,10 @@
 const db = require('../data/db-config');
 
 // get all products
-function getAllProducts()
+function getAllProducts(product_type)
 {
     return db('products')
+    .where('product_type', product_type)
     .join('companies', 'products.company_id', 'companies.id')
 }
 
