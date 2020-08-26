@@ -23,6 +23,7 @@ function getAllProducts(product_type)
 
 function getAllProductsQueryString(product_type, filter)
 {
+    let strainFilter = filter.split(',')
     return db.select(
         'products.id',
         'products.product_name',
@@ -38,7 +39,7 @@ function getAllProductsQueryString(product_type, filter)
     )
     .from('products')
     .where('product_type', product_type)
-    .andWhere('strain_type', 'in', filter)
+    .andWhere('strain_type', 'in', strainFilter)
     .join('companies', 'products.company_id', 'companies.id')
 }
 
