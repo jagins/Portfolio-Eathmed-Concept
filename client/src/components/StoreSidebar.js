@@ -22,8 +22,8 @@ function StoreSidebar(props)
     {
         for(let i = 0; i < products.length; i++)
         {
-            if(!(products[i].company_id in uniqueBrands))
-                uniqueBrands.add(products[i].company_id);
+            if(!(products[i].company_name in uniqueBrands))
+                uniqueBrands.add(products[i].company_name);
             
             if(!(products[i].size in uniqueSizes))
                 uniqueSizes.add(products[i].size);
