@@ -38,7 +38,7 @@ exports.seed = function(knex) {
           thca: 17.63,
           cbd: 0,
           size: 3.5,
-          strain_type: 'Satvia',
+          strain_type: 'Sativa',
           description: 'Outer Space is a sativa-dominant strain that is a cross of Island Sweet Skunk and Trinity and is known for cerebral and creative effects. It has a citrusy odor that is strong and produces a flavorful smoke. Great as a daytime medicine.',
           image: 'https://s3-us-west-2.amazonaws.com/leafly-images/products/photos/GZtdr43zQEGcbT0SCpLA_Cresco_3_5g_Flower_Sativa-01.jpg',
           company_id: 1
