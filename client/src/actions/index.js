@@ -15,7 +15,13 @@ export const getProducts = (type) => dispatch =>
 
 export const filterCurrentProducts = (strainType) => dispatch =>
 {
-    axios.get(`http://localhost:5000/api/products?product_type=${currentType}&strain_type=${strainType}`)
+    let string = '';
+    for(let i = 0; i < strainType.length; i++)
+    {
+        if(strainType[i].value)
+            string += strainType[i].name + ',';
+    }
+    axios.get(`http://localhost:5000/api/products?product_type=${currentType}&strain_type=${string}`)
     .then(res => {
         dispatch({type: 'GET_PRODUCTS', payload: res.data})
         dispatch({type: 'SUCCESS'});

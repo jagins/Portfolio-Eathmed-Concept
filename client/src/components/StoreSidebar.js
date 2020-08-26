@@ -9,7 +9,9 @@ import {connect} from 'react-redux';
 
 function StoreSidebar(props)
 {
-    const [typeFilter, setTypeFilter] = useState(null);
+    const [hybrid, setHybrid] = useState({name: 'Hybrid', value: false});
+    const [indica, setIndica] = useState({name: 'Indica', value: false});
+    const [sativa, setSativa] = useState({name: 'Sativa', value: false});
     const {products, filterCurrentProducts} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
@@ -31,18 +33,63 @@ function StoreSidebar(props)
         sizes = Array.from(uniqueSizes);
     }
 
+
+    const changeHybrid = () => 
+    {
+      setHybrid({
+          ...hybrid,
+          value: !hybrid.value
+      })
+    }
+
+    const changeIndica = () => 
+    {
+      setIndica({
+          ...indica,
+          value: !indica.value
+      })
+    }
+
+    const changeSativa = () => 
+    {
+      setSativa({
+          ...sativa,
+          value: !sativa.value
+      })
+    }
+
     useEffect(() => {
-        if(products.length > 0)
-            filterCurrentProducts(typeFilter)
-    }, [filterCurrentProducts, typeFilter])
+        filterCurrentProducts([hybrid, indica, sativa])
+    }, [hybrid, indica, sativa, filterCurrentProducts])
 
     return (
         <div className='sidebar'>
              <h4>Type</h4>
             <div className='types'>
-                    <Chip label='Hybrid' variant='outlined' clickable avatar={<Avartar className='hybrid'>H</Avartar>} onClick={() => setTypeFilter('Hybrid')}/>
-                    <Chip label='Indica' variant='outlined' clickable avatar={<Avartar className='indica'>I</Avartar>} onClick={() => setTypeFilter('Indica')}/>
-                    <Chip label='Sativa' variant='outlined' clickable avatar={<Avartar className='sativa'>S</Avartar>} onClick={() => setTypeFilter('Sativa')}/>
+                    <Chip 
+                        label='Hybrid' 
+                        variant='outlined' 
+                        clickable 
+                        avatar={<Avartar className='hybrid'>H</Avartar>} 
+                        onClick={changeHybrid} 
+                        color={!hybrid.value ? 'primary' : 'secondary'}
+                    />
+                    <Chip 
+                        label='Indica' 
+                        variant='outlined' 
+                        clickable 
+                        avatar={<Avartar className='indica'>I</Avartar>} 
+                        onClick={changeIndica}
+                        color={!indica.value ? 'primary' : 'secondary'}
+                    />
+                    <Chip 
+                        label='Sativa' 
+                        variant='outlined' 
+                        clickable 
+                        avatar={<Avartar className='sativa'>S</Avartar>} 
+                        onClick={changeSativa}
+                        color={!sativa.value ? 'primary' : 'secondary'}
+                    />
             </div>
             
             <hr/>
