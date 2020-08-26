@@ -3,7 +3,20 @@ const db = require('../data/db-config');
 // get all products
 function getAllProducts(product_type)
 {
-    return db('products')
+    return db.select(
+        'products.id',
+        'products.product_name',
+        'products.price',
+        'products.product_type',
+        'products.thca',
+        'products.cbd',
+        'products.size',
+        'products.strain_type',
+        'products.image',
+        'products.description',
+        'companies.company_name'
+    )
+    .from('products')
     .where('product_type', product_type)
     .join('companies', 'products.company_id', 'companies.id')
 }
