@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 function StoreSidebar(props)
 {
     const [typeFilter, setTypeFilter] = useState(null);
-    const {products, filterCurrentProducts, isLoading} = props;
+    const {products, filterCurrentProducts} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
     let brands = []; 
