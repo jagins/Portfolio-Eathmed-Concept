@@ -1,20 +1,14 @@
 import React, {useEffect} from 'react';
 import StoreProductCard from './StoreProductCard';
 import {connect} from 'react-redux';
-import {getProducts} from '../actions';
 
 function StoreProducts(props)
 {
-    const {isLoading, products, getProducts} = props
-    
-    useEffect(() => {
-        getProducts()
-    }, [getProducts])
-    
+    const {isLoading, products} = props
     return (
         <div className='product-container'>
-            {!isLoading && products.length > 0 && products.map((product, id) => (
-                <StoreProductCard key={id} product={product}/>
+            {!isLoading && products.length > 0 && products.map((product) => (
+                <StoreProductCard key={product.id} product={product}/>
             ))}
            
         </div>
@@ -29,4 +23,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {getProducts})(StoreProducts);
+export default connect(mapStateToProps, {})(StoreProducts);

@@ -1,18 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Dropdown} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import {filterType} from '../actions';
+import {getProducts} from '../actions';
 
 function StoreHeader(props)
 {
     const [menu, setMenu] = useState('Flower');
-    const {isLoading, products, filterType} = props;
+    const {isLoading, products, getProducts} = props;
 
     useEffect(() => {
-        filterType(menu)
-    }, [menu, filterType])
-
-    console.log(products);
+        getProducts(menu)
+    }, [menu, getProducts])
     return (
         <header className='store-header'>
             <Dropdown>
@@ -40,4 +38,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {filterType})(StoreHeader);
+export default connect(mapStateToProps, {getProducts})(StoreHeader);

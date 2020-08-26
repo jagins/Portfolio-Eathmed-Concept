@@ -4,13 +4,13 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avartar from '@material-ui/core/Avatar';
-import {FilterCurrentProducts} from '../actions';
+// import {FilterCurrentProducts} from '../actions';
 import {connect} from 'react-redux';
 
 function StoreSidebar(props)
 {
     const [typeFilter, setTypeFilter] = useState(null);
-    const {FilterCurrentProducts, products} = props;
+    const {products} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
     let brands = []; 
@@ -32,8 +32,7 @@ function StoreSidebar(props)
     }
 
     useEffect(() => {
-        FilterCurrentProducts(typeFilter)
-    }, [typeFilter, FilterCurrentProducts])
+    }, [])
 
     return (
         <div className='sidebar'>
@@ -73,4 +72,4 @@ const mapStateToProps = state => {
     };
 }
 
-export default connect(mapStateToProps, {FilterCurrentProducts})(StoreSidebar);
+export default connect(mapStateToProps, {})(StoreSidebar);

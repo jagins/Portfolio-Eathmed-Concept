@@ -1,21 +1,21 @@
-import {testArray} from '../utils/testProducts';
+// import {testArray} from '../utils/testProducts';
+import axios from 'axios';
 
-export const getProducts = () => dispatch =>
+export const getProducts = (type) => dispatch =>
 {
-    dispatch({type: 'GET_PRODUCTS', payload: testArray.filter(product => product.product_type === 'Flower')});
-    dispatch({type: 'SUCCESS'})
+    axios.get(`http://localhost:5000/api/products?product_type=${type}`)
+    .then(res => {
+        dispatch({type: 'GET_PRODUCTS', payload: res.data})
+        dispatch({type: 'SUCCESS'});
+        
+    })
+    .catch(err => console.log(err));
 }
 
-export const filterType = type => dispatch =>
-{
-    dispatch({type: 'GET_PRODUCTS', payload: testArray});
-    dispatch({type: 'CHANGE_TYPE', payload: type})
-    dispatch({type: 'SUCCESS'});
-}
-
-export const FilterCurrentProducts = type => dispatch =>
-{
-    dispatch({type: 'GET_PRODUCTS', payload: testArray});
-    dispatch({type: 'CHANGE_STRAIN_TYPE', payload: type});
-    dispatch({type: 'SUCCESS'});
-}
+// export const filterType = (type) => dispatch =>
+// {
+//     console.log(type);
+//     getProducts();
+//     dispatch({type: 'CHANGE_TYPE', payload: type});
+//     dispatch({type: 'SUCCESS'});
+// }

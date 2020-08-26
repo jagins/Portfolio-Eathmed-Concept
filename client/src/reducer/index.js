@@ -1,7 +1,7 @@
 const initialState = {
     isLoading: false,
     products: [],
-    productType: 'Flower',
+    productType: '',
     error: ''
 }
 
