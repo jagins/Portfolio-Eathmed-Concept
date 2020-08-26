@@ -4,6 +4,28 @@ const db = require('../data/db-config');
 function getAllProducts()
 {
     return db('products')
+    .join('companies', 'products.company_id', 'companies.id')
+}
+
+function getAllProductsQueryString(product_type, filter)
+{
+    return db.select(
+        'products.id',
+        'products.product_name',
+        'products.price',
+        'products.product_type',
+        'products.thca',
+        'products.cbd',
+        'products.size',
+        'products.strain_type',
+        'products.image',
+        'products.description',
+        'companies.company_name'
+    )
+    .from('products')
+    .where('product_type', product_type)
+    .andWhere('strain_type', 'in', filter)
+    .join('companies', 'products.company_id', 'companies.id')
 }
 
 // get products by id
@@ -14,5 +36,6 @@ function getProductsById(id)
 
 module.exports = {
     getAllProducts,
-    getProductsById
+    getProductsById,
+    getAllProductsQueryString
 }
