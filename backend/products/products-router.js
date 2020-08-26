@@ -1,11 +1,13 @@
 const express = require('express');
 
 const products = require('./products-model');
+const { query } = require('express');
 
 const router = express.Router();
 
 // GET /api/products
 router.get('/', (req, res) => {
+
     products.getAllProducts().where(req.query)
     .then(products => res.status(200).json(products))
     .catch(err => res.status(500).json({
