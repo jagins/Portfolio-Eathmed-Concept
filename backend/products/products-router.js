@@ -21,6 +21,12 @@ router.get('/', (req, res) =>
         .then(products => res.status(200).json(products))
         .catch(err => res.status(500).json({errorMessage: 'Could not retrieve products from the db'}))
     }
+    else if(req.query.company_name)
+    {
+        products.getProductsByTypeandCompany(req.query.product_type, req.query.company_name)
+        .then(products => res.status(200).json(products))
+        .catch(err => res.status(500).json({errorMessage: 'Could not retrieve products from the db' }))
+    }
     else
     {
         products.getProductsByType(req.query.product_type)
