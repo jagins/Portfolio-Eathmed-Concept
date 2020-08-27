@@ -12,6 +12,8 @@ function StoreSidebar(props)
     const [hybrid, setHybrid] = useState({name: 'Hybrid', value: false});
     const [indica, setIndica] = useState({name: 'Indica', value: false});
     const [sativa, setSativa] = useState({name: 'Sativa', value: false});
+    const companies = {};
+    const [brandCheckbox, setBrandCheckbox] = useState({companies});
     const {products, filterCurrentProducts} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
@@ -62,6 +64,19 @@ function StoreSidebar(props)
         filterCurrentProducts([hybrid, indica, sativa])
     }, [hybrid, indica, sativa, filterCurrentProducts])
 
+    useEffect(() => {
+        console.log(brandCheckbox);
+    }, [brandCheckbox])
+
+    const handleCheckbox = (event) =>
+    {
+        setBrandCheckbox({
+            ...brandCheckbox,
+            ...companies,
+            [event.target.name]: event.target.checked
+        });
+    }
+
     return (
         <div className='sidebar'>
              <h4>Type</h4>
@@ -97,8 +112,22 @@ function StoreSidebar(props)
             <div>
                 <h4>Brand</h4>
                 <FormGroup row>
-                    {brands.length === 1 ? <FormControlLabel key={brands[0]} control={<Checkbox/>} label={brands[0]} disabled/>  : 
-                    brands.map((brand, index) => <FormControlLabel key={index} control={<Checkbox/>} label={brand}/> )}
+                    {brands.length === 1 ? 
+                        <FormControlLabel 
+                            key={brands[0]} 
+                            control={<Checkbox/>} 
+                            label={brands[0]} 
+                            disabled
+                        />  : 
+                    brands.map((brand, index) => 
+                        <FormControlLabel 
+                            key={index} 
+                            control={<Checkbox 
+                            checked={brandCheckbox.companies[brand]} 
+                            onChange={handleCheckbox} 
+                            name={brand}/>} 
+                            label={brand} 
+                        />)}
                 </FormGroup>
             
             </div>
