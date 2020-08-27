@@ -1,7 +1,7 @@
 const db = require('../data/db-config');
 
 // get all products
-function getAllProducts(product_type)
+function getProductsByType(product_type)
 {
     return db.select(
         'products.id',
@@ -21,7 +21,7 @@ function getAllProducts(product_type)
     .join('companies', 'products.company_id', 'companies.id')
 }
 
-function getAllProductsQueryString(product_type, filter)
+function getProductsByTypeandStrain(product_type, filter)
 {
     let strainFilter = filter.split(',')
     return db.select(
@@ -43,6 +43,30 @@ function getAllProductsQueryString(product_type, filter)
     .join('companies', 'products.company_id', 'companies.id')
 }
 
+function getProductsByTypeStrainandCompany(product_type, filter, company)
+{
+    let strainFilter = filter.split(',');
+    let companies = company.split(',');
+    return db.select(
+        'products.id',
+        'products.product_name',
+        'products.price',
+        'products.product_type',
+        'products.thca',
+        'products.cbd',
+        'products.size',
+        'products.strain_type',
+        'products.image',
+        'products.description',
+        'companies.company_name'
+    )
+    .from('products')
+    .where('product_type', product_type)
+    .andWhere('strain_type', 'in', strainFilter)
+    .andWhere('companies.company_name', 'in', companies)
+    .join('companies', 'products.company_id', 'companies.id')
+}
+
 // get products by id
 function getProductsById(id)
 {
@@ -50,7 +74,8 @@ function getProductsById(id)
 }
 
 module.exports = {
-    getAllProducts,
+    getProductsByType,
     getProductsById,
-    getAllProductsQueryString
+    getProductsByTypeandStrain,
+    getProductsByTypeStrainandCompany
 }

@@ -9,15 +9,21 @@ const router = express.Router();
 //if strain_type is in the query as well it can more than 1 seperated by a comma
 router.get('/', (req, res) => 
 {
-    if(req.query.strain_type)
+    if(req.query.strain_type && req.query.company_name)
     {
-        products.getAllProductsQueryString(req.query.product_type, req.query.strain_type)
+        products.getProductsByTypeStrainandCompany(req.query.product_type, req.query.strain_type, req.query.company_name)
+        .then(products => res.status(200).json(products))
+        .catch(err => res.status(500).json({errorMessage: 'Could not retrieve products from the db'}))
+    }   
+    else if(req.query.strain_type)
+    {
+        products.getProductsByTypeandStrain(req.query.product_type, req.query.strain_type)
         .then(products => res.status(200).json(products))
         .catch(err => res.status(500).json({errorMessage: 'Could not retrieve products from the db'}))
     }
     else
     {
-        products.getAllProducts(req.query.product_type)
+        products.getProductsByType(req.query.product_type)
         .then(products => res.status(200).json(products))
         .catch(err => res.status(500).json({errorMessage: 'Could not retrieve products from the db'}))
     }
