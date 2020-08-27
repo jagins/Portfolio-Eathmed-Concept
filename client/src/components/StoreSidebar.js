@@ -12,8 +12,7 @@ function StoreSidebar(props)
     const [hybrid, setHybrid] = useState({name: 'Hybrid', value: false});
     const [indica, setIndica] = useState({name: 'Indica', value: false});
     const [sativa, setSativa] = useState({name: 'Sativa', value: false});
-    const companies = {};
-    const [brandCheckbox, setBrandCheckbox] = useState({companies});
+    const [brandCheckbox, setBrandCheckbox] = useState({});
     const {products, filterCurrentProducts} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
@@ -72,7 +71,6 @@ function StoreSidebar(props)
     {
         setBrandCheckbox({
             ...brandCheckbox,
-            ...companies,
             [event.target.name]: event.target.checked
         });
     }
@@ -123,7 +121,7 @@ function StoreSidebar(props)
                         <FormControlLabel 
                             key={index} 
                             control={<Checkbox 
-                            checked={brandCheckbox.companies[brand]} 
+                            checked={brandCheckbox[brand] || false} 
                             onChange={handleCheckbox} 
                             name={brand}/>} 
                             label={brand} 
