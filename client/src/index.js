@@ -3,18 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ApolloClient from 'apollo-boost';
-import {ApolloProvider} from 'react-apollo';
+import {createStore, applyMiddleware} from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import {Provider} from 'react-redux';
+import {reducer} from './reducer';
 
-const client = new ApolloClient({
-    uri: process.env.REACT_APP_URL,
-    headers: {
-        'x-hasura-admin-secret': process.env.REACT_APP_ADMIN_SECRET
-    }
-});
-
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 ReactDOM.render(
-<ApolloProvider client={client}>
-    <App />
-</ApolloProvider>, 
+    <Provider store={store}>
+        <App />
+    </Provider>, 
 document.getElementById('root'));

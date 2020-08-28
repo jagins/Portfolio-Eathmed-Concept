@@ -1,10 +1,14 @@
 import React from 'react';
 import stepsArray from '../utils/stepsArray';
+import NavbarComponent from '../components/Navbar';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/InfoPage.css';
 import '../Styles/MedicalCardInfo.css';
 
 function MedicalCardInfo() {
     return (
+        <section>
+            <NavbarComponent />
         <div className='top'>
             <h1>Get Your Medical Marijuana Card</h1>
             <p className='desc'>In order to qualify for a license to use and legally purchase medical marijuana, you must fulfill the following qualifications:</p>
@@ -33,6 +37,8 @@ function MedicalCardInfo() {
                 </div>
             </div>
         </div>
+        <MarketingFooter/>
+        </section>
     )
 }
 

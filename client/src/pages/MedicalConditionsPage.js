@@ -2,12 +2,16 @@ import React from 'react';
 import medicalConditonsArray from '../utils/mecialConditionsArray';
 import MedicalConditionsCard from '../components/MedicalConditionsCard';
 import {otherConditions, spinalConditions} from '../utils/otherMedicalConditions';
+import NavbarComponent from '../components/Navbar';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/InfoPage.css';
 import '../Styles/MedicalCondtions.css';
 
 function MedicalConditionsPage()
 {
     return (
+        <section>
+            <NavbarComponent />
         <div className='top'>
             <h1>Qualifying Medical Conditions</h1>
             <p className='desc'>While there are hundreds of conditions that can potentially be helped by the use of medical marijuana, the state of Illinois only recognizes the following conditions as treatable using cannabis. **Please note that this list will be changing as the Illinois law evolves. If you do not see your condition listed, please check back at a later date as we will be updating the list of medical conditions that the state of Illinois deems appropriate for medical marijuana use.**</p>
@@ -41,6 +45,8 @@ function MedicalConditionsPage()
                    </ul>
             </div>
         </div>
+        <MarketingFooter/>
+        </section>
     )
 }
 

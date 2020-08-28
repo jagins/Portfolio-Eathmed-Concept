@@ -1,9 +1,13 @@
 import React from 'react';
+import NavbarComponent from '../components/Navbar';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/InfoPage.css';
 
 function OpioidProgram()
 {
     return(
+        <section>
+        <NavbarComponent />
         <div className='top'>
             <h1>Opioid Alterative Program</h1>
             <p>On August 28, 2018, Illinois law SB336, the Alteratives to Opioids Act of 2018, was signed. the act allows a treating physician to refer a patient to the Opioid Alternative Pilot Program and be treated with medical cannabis in place of opioids. </p>
@@ -24,6 +28,8 @@ function OpioidProgram()
                 http://www.dph.illinois.gov/topics-services/prevention-wellness/medical-cannabis
             </a>
         </div>
+        <MarketingFooter/>
+        </section>
     );
 }
 

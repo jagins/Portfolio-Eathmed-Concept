@@ -1,10 +1,14 @@
 import React from 'react';
 import faqArray from '../utils/faqArray';
+import NavbarComponent from '../components/Navbar';
+import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/InfoPage.css';
 
 function FaqPage()
 {
     return (
+        <section>
+            <NavbarComponent/>
         <div className='top'>
             <h1>Frequently Asked Questions</h1>
 
@@ -18,6 +22,8 @@ function FaqPage()
                 )
             })}
         </div>
+        <MarketingFooter/>
+        </section>
     )
 }
 

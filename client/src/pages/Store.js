@@ -1,27 +1,27 @@
-import React, {useState} from 'react';
-import Logo from '../images/earthmed-site-logo-bigger.png';
-import {Tabs, Tab} from 'react-bootstrap';
-import Featured from '../components/Featured';
-import Brands from '../components/Brands';
+import React from 'react';
+import logo from '../images/earthmed-site-logo-bigger.png';
+import Button from 'react-bootstrap/Button';
+import StoreHeader from '../components/StoreHeader';
+import StoreSidebar from '../components/StoreSidebar';
+import StoreProducts from '../components/StoreProducts';
 import '../Styles/Store.css';
 
 function Store()
 {
-    const [tab, setTab] = useState('featured');
     return (
-        <div>
-            <div className='logo'>
-                <img src={Logo} alt='Eathmed logo'/>
+        <section className='store'>
+            <div className='login'>
+                <Button variant='success'>Login/Register</Button>
             </div>
-            <div className='tab-container'>
-                <Tabs activeKey={tab} onSelect={tab => setTab(tab)} variant='pills' className='tabs'>
-                    <Tab eventKey='featured' title='Featured Products'> <Featured/> </Tab>
-                    <Tab eventKey='brands' title='Brands'> <Brands/> </Tab>
-                    <Tab eventKey='shop' title='Shop'> Shop </Tab>
-                </Tabs>
+            <img src={logo} alt='Earthmed Logo'/>
+            <StoreHeader/>
+           
+            <div className='showcase'>
+                <StoreSidebar/>
+                <StoreProducts/>
             </div>
-        </div>
-    );
+        </section>
+    )
 }
 
 export default Store;
