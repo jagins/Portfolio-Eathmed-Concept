@@ -8,7 +8,6 @@ import '../Styles/Store.css';
 
 function Store()
 {
-    console.log('env var=', process.env.REACT_APP_BACKENDAPI)
     return (
         <section className='store'>
             <div className='login'>
