@@ -30,7 +30,7 @@ function ProductDetails()
                         <Button size='lg' disabled>Add to Cart</Button>
                         <p>To place an order online, you'll need to login or create an account</p>
                       </div>
-                      <div>
+                      <div className='product-details-card'>
                           <h6>ProductDetails</h6>
                           <h5>THCA</h5>
                           <p>{product.thca}</p>

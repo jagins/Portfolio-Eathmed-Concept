@@ -1,12 +1,11 @@
 .product-details-container {
-    border: 1px solid red;
     margin-top: 2%;
     display: flex;
     justify-content: space-evenly;
 }
 
 .product-details-container div {
-    border: 1px solid blue;
+    border: 1px solid lightgray;
     width: 20%;
 }
 .product-details-container div img {
@@ -14,10 +13,17 @@
 }
 
 .product-details-container .product-details {
-    border: 1px solid green;
     width: 30%;
+    border: none;
 }
 
 .product-details-container hr {
     width: 80%;
+}
+
+.product-details-container .product-details-card h6 {
+    text-align: center;
+    background: #5b5d62;
+    color: white;
+    padding: 1%
 }
