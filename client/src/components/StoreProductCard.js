@@ -4,10 +4,12 @@ import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
 import {IconContext} from 'react-icons';
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
+import {useHistory} from 'react-router-dom';
 
 function StoreProductCard(props) 
 { 
     const [style] = useState({marginRight: '5px'});
+    const history = useHistory();
 
     const getProductTypeIcon = () => {
         switch(props.product.product_type)
@@ -25,7 +27,7 @@ function StoreProductCard(props)
         }
     }
     return (
-            <div className='product-card'>
+            <div className='product-card' onClick={() => history.push(`/store/products/${props.product.id}`)}>
                 <Chip className='product-chip' label={props.product.strain_type} variant='outlined' avatar={<Avatar className={props.product.strain_type}>{props.product.strain_type[0]}</Avatar>} />
                 <img src={props.product.image} alt={props.product.name}/>
                 <hr />

@@ -1,0 +1,23 @@
+.product-details-container {
+    border: 1px solid red;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-details-container div {
+    border: 1px solid blue;
+    width: 20%;
+}
+.product-details-container div img {
+    width: 100%;
+}
+
+.product-details-container .product-details {
+    border: 1px solid green;
+    width: 30%;
+}
+
+.product-details-container hr {
+    width: 80%;
+}
