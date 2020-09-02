@@ -4,6 +4,11 @@ import axios from 'axios';
 import '../Styles/ProductDetails.css';
 import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Chip from '@material-ui/core/Chip';
+import Avatar from '@material-ui/core/Avatar';
+import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite} from 'react-icons/fa';
+import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
+
 function ProductDetails()
 {
     const {id} = useParams();
@@ -15,6 +20,24 @@ function ProductDetails()
         .catch(err => console.log(err))
     }, [id])
     
+    const getProductType = () => {
+        switch(product.product_type)
+        {
+            case 'Flower':
+                return <FaPrescriptionBottleAlt/>
+            case 'Preroll':
+                return <FaJoint/>
+            case 'Edible':
+                return <FaCookieBite/>
+            case 'Beverage':
+                return <GiSodaCan/>
+            case 'Vape':
+                return <GiSmokeBomb/>
+            default: 
+                return null;
+        }
+    }
+  
     return (
         <section>
               {product && (
@@ -47,9 +70,19 @@ function ProductDetails()
                             </div>
                           <hr/>
                            <h5>Form</h5>
-                            <p>{product.product_type}</p>
+                            <Chip 
+                                label={product.product_type} 
+                                variant='outlined' 
+                                clickable 
+                                avatar={<Avatar className='sativa'>{getProductType()}</Avatar>} 
+                             />
                             <h5>Strain Type</h5>
-                            <p>{product.strain_type}</p>
+                            <Chip 
+                                className='product-chip'
+                                label={product.strain_type} 
+                                variant='outlined' 
+                                avatar={<Avatar className={product.strain_type}>{product.strain_type[0]}</Avatar>} 
+                            />
                       </div>
                   </div>
             )}
