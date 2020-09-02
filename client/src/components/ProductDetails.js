@@ -3,6 +3,7 @@ import {useParams} from 'react-router-dom';
 import axios from 'axios';
 import '../Styles/ProductDetails.css';
 import {Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 function ProductDetails()
 {
     const {id} = useParams();
@@ -27,8 +28,8 @@ function ProductDetails()
                         <hr/>
                         <span>size</span>
                         <h5>{product.size}g</h5>
-                        <Button size='lg' disabled>Add to Cart</Button>
-                        <p>To place an order online, you'll need to login or create an account</p>
+                        <Button className='cart-button'size='lg' disabled>Add to Cart</Button>
+                        <p>To place an order online, you'll need to <Link to='/login'>Login</Link> or <Link to='/register'>create an account</Link></p>
                       </div>
                       <div className='product-details-card'>
                           <h6>ProductDetails</h6>
