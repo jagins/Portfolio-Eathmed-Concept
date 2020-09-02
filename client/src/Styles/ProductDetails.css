@@ -49,3 +49,40 @@
     color: #a6a6a6;
     border: 1px solid #e0e0e0;
 }
+
+.product-details-container .product-details-card .bottom-half {
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.product-details-container .product-details-card .form-container,
+.product-details-container .product-details-card .strain-container {
+    border: none;
+    width: 30%;
+}
+
+.form-container .product-chip,
+.strain-container .product-chip {
+    width: fit-content;
+}
+
+.strain-container .product-chip .Indica{
+    background: blue;
+    color: white;
+}
+
+.strain-container .product-chip .Hybrid {
+    background: green;
+    color: white;
+}
+
+.strain-container .product-chip .Sativa {
+    background: red;
+    color: white;
+}
+
+.product-details-card .product-details-card-header {
+    width: 100%;
+}

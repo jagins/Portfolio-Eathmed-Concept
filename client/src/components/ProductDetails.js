@@ -68,21 +68,29 @@ function ProductDetails()
                                 </div>
                                 ): null}
                             </div>
-                          <hr/>
-                           <h5>Form</h5>
-                            <Chip 
-                                label={product.product_type} 
-                                variant='outlined' 
-                                clickable 
-                                avatar={<Avatar className='sativa'>{getProductType()}</Avatar>} 
-                             />
-                            <h5>Strain Type</h5>
-                            <Chip 
-                                className='product-chip'
-                                label={product.strain_type} 
-                                variant='outlined' 
-                                avatar={<Avatar className={product.strain_type}>{product.strain_type[0]}</Avatar>} 
-                            />
+                          <hr className='product-details-card-header'/>
+                           <div className='bottom-half'>
+                               <div className='form-container'>
+                                    <h5>Form</h5>
+                                    <Chip 
+                                        className='product-chip'
+                                        label={product.product_type} 
+                                        variant='outlined' 
+                                        clickable 
+                                        avatar={<Avatar className='sativa'>{getProductType()}</Avatar>} 
+                                    />
+                               </div>
+
+                               <div className='strain-container'>
+                                    <h5>Strain Type</h5>
+                                    <Chip 
+                                        className='product-chip'
+                                        label={product.strain_type} 
+                                        variant='outlined' 
+                                        avatar={<Avatar className={product.strain_type}>{product.strain_type[0]}</Avatar>} 
+                                    />
+                               </div>
+                           </div>
                       </div>
                   </div>
             )}
