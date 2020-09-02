@@ -10,7 +10,6 @@ function StoreProducts(props)
             {!isLoading && products.length > 0 && products.map((product) => (
                 <StoreProductCard key={product.id} product={product}/>
             ))}
-           
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/InfoPage.css'
 import NavbarComponent from '../components/Navbar';
-import MarketingFooter from '../components/MarketingFooter';
 
 function PlantsPage()
 {
@@ -24,7 +23,6 @@ function PlantsPage()
             <h3>Hybrids</h3>
             <p>There are a wide range of Hybrid strains of medicinal marijuana. These plants are created by selectively “blending” both Indica and Sativa strains to maximize the beneficial properties from each strain. Most Hybrid strains of medical marijuana fall into two broad groups: Indica-Sativa (Indica dominant) or Sativa-Indica (Sativa dominant) . The goal of Hybrids is to combine characteristics of each strain to minimize some of the unwanted effects of one while adding to the desired effects of the other. For example: Indica dominant medical cannabis hybrids are effective for pain relief with the Sativa component allowing the patient to maintain their energy and activity levels. Sativa dominant strains are good for stimulating appetite, with the Indica portion helping to reduce body pain and increase relaxation. Among other conditions, Hybrid cannabis is used to treat insomnia, muscle spasms, reduce inflammation, and treat anxiety.</p>
         </div>
-        <MarketingFooter/>
         </section>
     )
 }
