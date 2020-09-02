@@ -1,7 +1,6 @@
 import React from 'react';
 import NavbarComponent from '../components/Navbar';
 import '../Styles/InfoPage.css';
-import MarketingFooter from '../components/MarketingFooter';
 
 function HoursPage()
 {
@@ -20,7 +19,6 @@ function HoursPage()
                 <p>Saturday – 11am to 8pm</p>
             </div>
         </div>
-        <MarketingFooter/>
         </section>
     )
 }

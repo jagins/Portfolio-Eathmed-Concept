@@ -1,7 +1,6 @@
 import React from 'react';
 import '../Styles/InfoPage.css';
 import NavbarComponent from '../components/Navbar';
-import MarketingFooter from '../components/MarketingFooter';
 
 function ProductsPage()
 {
@@ -18,7 +17,6 @@ function ProductsPage()
                 <li>Edibles / Oral – Patients can take Cannabis orally from tablets that are created in a laboratory.</li>
             </ul>
         </div>
-        <MarketingFooter/>
         </section>
     )
 }

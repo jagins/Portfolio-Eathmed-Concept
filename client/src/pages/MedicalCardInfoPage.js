@@ -1,7 +1,6 @@
 import React from 'react';
 import stepsArray from '../utils/stepsArray';
 import NavbarComponent from '../components/Navbar';
-import MarketingFooter from '../components/MarketingFooter';
 import '../Styles/InfoPage.css';
 import '../Styles/MedicalCardInfo.css';
 
@@ -37,7 +36,6 @@ function MedicalCardInfo() {
                 </div>
             </div>
         </div>
-        <MarketingFooter/>
         </section>
     )
 }

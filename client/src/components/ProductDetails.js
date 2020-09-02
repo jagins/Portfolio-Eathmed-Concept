@@ -8,7 +8,6 @@ import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
 import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite} from 'react-icons/fa';
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
-import MarketingFooter from './MarketingFooter';
 
 function ProductDetails()
 {
@@ -95,7 +94,6 @@ function ProductDetails()
                       </div>
                   </div>
             )}
-            <MarketingFooter/>
         </section>
     );
 }
