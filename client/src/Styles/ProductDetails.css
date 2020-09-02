@@ -27,3 +27,15 @@
     color: white;
     padding: 1%
 }
+
+.product-details-container .product-details-card .top-half {
+    display: flex;
+    border: none;
+    width: 100%;
+    justify-content: space-around;
+}
+.product-details-container .product-details-card .thca-container,
+.product-details-container .product-details-card .cbd-container
+{
+    border: none;
+}

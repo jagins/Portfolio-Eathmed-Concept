@@ -25,15 +25,25 @@ function ProductDetails()
                         <h2>{product.product_name}</h2>
                         <h5>${product.price}</h5>
                         <hr/>
-                        <p>size</p>
+                        <span>size</span>
                         <h5>{product.size}g</h5>
                         <Button size='lg' disabled>Add to Cart</Button>
                         <p>To place an order online, you'll need to login or create an account</p>
                       </div>
                       <div className='product-details-card'>
                           <h6>ProductDetails</h6>
-                          <h5>THCA</h5>
-                          <p>{product.thca}</p>
+                          <div className='top-half'>
+                            <div className='thca-container'>
+                                <h5>THCA</h5>
+                                <p>{product.thca}%</p>
+                            </div>
+                            {product.cbd ? (
+                                <div className='cbd-container'>
+                                    <h5>CBDA</h5>
+                                    <p>{product.cbd}%</p>
+                                </div>
+                                ): null}
+                            </div>
                           <hr/>
                            <h5>Form</h5>
                             <p>{product.product_type}</p>
