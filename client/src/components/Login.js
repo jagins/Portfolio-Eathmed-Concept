@@ -11,7 +11,7 @@ function Login()
             <Navbar/>
             <div>
                 <h3>Login</h3>
-                <p>New Here? <Link to='/shop/register'>Create and account</Link></p>
+                <p>New Here? <Link to='/store/register'>Create and account</Link></p>
                 <input type='text' placeholder='Email Address'/>
                 <br/>
                 <input type='password' placeholder='Password'/>
