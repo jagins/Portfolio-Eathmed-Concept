@@ -15,14 +15,15 @@ function Register()
     });
 
     let formSchema = yup.object().shape({
-        firstName: yup.string().required(),
-        lastName: yup.string().required(),
-        email: yup.string().email().required(),
-        phoneNumber: yup.string().phone().required()
+        firstName: yup.string().min(4).required('First name must be at least 4 characters long'),
+        lastName: yup.string().min(4).required('Last name must be at least 4 characters long'),
+        email: yup.string().email().required('A vaild email address is required'),
+        phoneNumber: yup.string().phone().required('Please enter a valid phone number')
 
     })
 
     const handleChange = (event) => {
+        event.persist();
         setState({
             ...state,
             [event.target.name]: event.target.value
@@ -31,18 +32,12 @@ function Register()
 
     const submitForm = (event) => {
         event.preventDefault();
+        //TODO: Validate schema 
+        formSchema.validate(state)
+        .then(isValid => {console.log('form is valid')})
+        .catch(err => console.log(err.errors))
     }
 
-    useEffect(() => {
-        formSchema.isValid(state)
-        .then(valid => {
-            console.log('form is valid');
-
-        })
-        .then(err => {
-            console.log(err);
-        })
-    }, [state, formSchema])
     return (
         <div className='registration-form'>
             <Navbar/>
@@ -50,7 +45,7 @@ function Register()
                 <h3>Your Information</h3>
                 <p>Let's gather some information about you. We'll use this for contact you about your orders.</p>
             </div>
-            <form>
+            <form onSubmit={submitForm}>
                 <input 
                     type='text' 
                     placeholder='First Name' 
@@ -78,13 +73,12 @@ function Register()
                 <input 
                     type='tel' 
                     placeholder='Phone Number' 
-                    pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}' 
                     name='phoneNumber'
                     value={state.phoneNumber} 
                     onChange={handleChange}
                 />
                 <br/>
-                <Button className='next-btn' disabled>Next</Button>
+                <Button className='next-btn' type='submit'>Next</Button>
             </form>
         </div>
     );
