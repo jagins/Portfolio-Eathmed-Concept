@@ -1,17 +1,17 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import 'yup-phone';
 import '../Styles/registration.css';
 
-function Register() 
-{
+function Register() {
     const [state, setState] = useState({
         firstName: '',
         lastName: '',
         email: '',
         phoneNumber: '',
+        registrationStep: 2
     });
 
     let formSchema = yup.object().shape({
@@ -30,56 +30,81 @@ function Register()
         });
     }
 
-    const submitForm = (event) => {
+    const submitStep1 = (event) => {
         event.preventDefault();
-        //TODO: Validate schema 
         formSchema.validate(state)
-        .then(isValid => {console.log('form is valid')})
-        .catch(err => console.log(err.errors))
+            .then(isValid => {
+                setState({
+                    ...state,
+                    registrationStep: 2
+                });
+            })
+            .catch(err => console.log(err.errors))
     }
 
     return (
         <div className='registration-form'>
-            <Navbar/>
-            <div className='reg-header'>
-                <h3>Your Information</h3>
-                <p>Let's gather some information about you. We'll use this for contact you about your orders.</p>
-            </div>
-            <form onSubmit={submitForm}>
-                <input 
-                    type='text' 
-                    placeholder='First Name' 
-                    name='firstName'
-                    value={state.firstName} 
-                    onChange={handleChange}
-                />
-                <br/>
-                <input 
-                    type='text' 
-                    placeholder='Last Name' 
-                    name='lastName'
-                    value={state.lastName} 
-                    onChange={handleChange}
-                />
-                <br/>
-                <input 
-                    type='email' 
-                    placeholder='Email Address' 
-                    name='email'
-                    value={state.email} 
-                    onChange={handleChange}
-                />
-                <br/>
-                <input 
-                    type='tel' 
-                    placeholder='Phone Number' 
-                    name='phoneNumber'
-                    value={state.phoneNumber} 
-                    onChange={handleChange}
-                />
-                <br/>
-                <Button className='next-btn' type='submit'>Next</Button>
-            </form>
+            <Navbar />
+            {state.registrationStep === 1 ? (
+                <div>
+                    <div className='reg-header'>
+                        <h3>Your Information</h3>
+                        <p>Let's gather some information about you. We'll use this for contact you about your orders.</p>
+                    </div>
+                    <form onSubmit={submitStep1}>
+                        <input
+                            type='text'
+                            placeholder='First Name'
+                            name='firstName'
+                            value={state.firstName}
+                            onChange={handleChange}
+                        />
+                        <br />
+                        <input
+                            type='text'
+                            placeholder='Last Name'
+                            name='lastName'
+                            value={state.lastName}
+                            onChange={handleChange}
+                        />
+                        <br />
+                        <input
+                            type='email'
+                            placeholder='Email Address'
+                            name='email'
+                            value={state.email}
+                            onChange={handleChange}
+                        />
+                        <br />
+                        <input
+                            type='tel'
+                            placeholder='Phone Number'
+                            name='phoneNumber'
+                            value={state.phoneNumber}
+                            onChange={handleChange}
+                        />
+                        <br />
+                        <Button className='next-btn' type='submit'>Next</Button>
+                    </form>
+                </div>
+            ) : null}
+
+            {state.registrationStep === 2 ? (
+                <div>
+                    <h3 style={{ textAlign: 'center', marginTop: '5%' }}>Let's setup a password</h3>
+                    <form>
+                        <input
+                            type='password'
+                            placeholder='Password'
+                        />
+                        <input
+                            type='password'
+                            placeholder='Confirm password'
+                        />
+                        <Button>Create Password</Button>
+                    </form>
+                </div>
+            ) : null}
         </div>
     );
 }
