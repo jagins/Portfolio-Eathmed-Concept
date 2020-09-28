@@ -1,0 +1,34 @@
+.registration-form {
+}
+
+.registration-form .reg-header {
+   text-align: center;
+   margin-top: 2%;
+}
+
+.registration-form form {
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.registration-form form input {
+    width: 100%;
+    line-height: 3rem;
+    font-size: 1.5rem;
+}
+
+.registration-form form .next-btn {
+    width: 100%;
+    margin-top: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #28a745;
+    border: #28a745;
+    font-size: 1.5rem;
+}
+
+/* .registration-form form .next-btn:hover {
+    background-color: green;
+    border: green;
+} */
