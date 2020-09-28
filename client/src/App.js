@@ -13,6 +13,7 @@ import MarketingFooter from './components/MarketingFooter';
 import ProductDetails from './components/ProductDetails';
 import Store from './pages/Store';
 import Login from './components/Login';
+import Register from './components/Register';
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route exact path='/store' component={Store} />
           <Route path='/store/products/:id' component={ProductDetails} />
           <Route path='/store/login' component={Login}/>
+          <Route path='/store/register' component={Register}/>
         </Switch>
         <MarketingFooter/>
       </Router>
