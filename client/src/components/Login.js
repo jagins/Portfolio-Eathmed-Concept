@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 import Navbar from './Navbar';
 import '../Styles/Login.css';
+import axios from 'axios';
+import {setToken} from '../utils/tokenMethods';
 
 function Login()
 {
@@ -10,6 +12,8 @@ function Login()
         email: '',
         password: ''
     });
+
+    const history = useHistory();
 
     const handleChange = event =>
     {
@@ -22,7 +26,11 @@ function Login()
     const handleSubmit = (event) => 
     {
         event.preventDefault();
-        //axios call to backend here
+        axios.post('http://localhost:5000/api/auth/login', state)
+        .then(res => {
+            setToken(res.data.token);
+            history.push('/store');
+        })
     }
     return (
         <div className='login'>
