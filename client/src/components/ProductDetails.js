@@ -8,6 +8,7 @@ import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
 import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite} from 'react-icons/fa';
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
+import {checkValidToken} from '../utils/tokenMethods';
 
 function ProductDetails()
 {
@@ -51,8 +52,14 @@ function ProductDetails()
                         <hr/>
                         <span>size</span>
                         <h5>{product.size}g</h5>
-                        <Button className='cart-button'size='lg' disabled>Add to Cart</Button>
-                        <p>To place an order online, you'll need to <Link to='/store/login'>Login</Link> or <Link to='/register'>create an account</Link></p>
+                        {checkValidToken() ? 
+                            <div className='buying-options'>
+                                <Button className='cart-button-active'size='lg'>Add to Cart</Button>
+                            </div> :
+                            <div className='buying-options'>
+                                <Button className='cart-button-disabled'size='lg' disabled>Add to Cart</Button>
+                                <p>To place an order online, you'll need to <Link to='/store/login'>Login</Link> or <Link to='/store/register'>create an account</Link></p>
+                            </div>}
                       </div>
                       <div className='product-details-card'>
                           <h6>ProductDetails</h6>

@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
+import axios from 'axios';
+import {setToken} from '../utils/tokenMethods';
 import Button from 'react-bootstrap/Button';
 
 function Register2({data}) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+    const history = useHistory();
 
     const passwordChange = (event) => {
         setPassword(event.target.value);
@@ -19,7 +23,12 @@ function Register2({data}) {
         if(password === confirmPassword)
         {
             const registrationData = {...data, password};
-            console.log(registrationData);
+            axios.post('http://localhost:5000/api/auth/register', registrationData)
+            .then(res => {
+                setToken(res.data.token);
+                history.push('/store');
+            })
+            .catch(err => console.log(err))
         }
         else {
             setError('Passwords must match')
