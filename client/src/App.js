@@ -14,6 +14,7 @@ import ProductDetails from './components/ProductDetails';
 import Store from './pages/Store';
 import Login from './components/Login';
 import Register from './components/Register';
+import ShoppingCart from './pages/ShoppingCart';
 import './App.css';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path='/store/products/:id' component={ProductDetails} />
           <Route path='/store/login' component={Login}/>
           <Route path='/store/register' component={Register}/>
+          <Route path='/store/cart' component={ShoppingCart}/>
         </Switch>
         <MarketingFooter/>
       </Router>
