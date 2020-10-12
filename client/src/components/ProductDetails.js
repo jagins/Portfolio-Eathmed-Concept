@@ -6,9 +6,10 @@ import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
-import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite} from 'react-icons/fa';
+import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite, FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
 import {checkValidToken} from '../utils/tokenMethods';
+import {IconContext} from 'react-icons';
 
 function ProductDetails()
 {
@@ -50,13 +51,29 @@ function ProductDetails()
                         <h2>{product.product_name}</h2>
                         <h5>${product.price}</h5>
                         <hr/>
-                        <span>size</span>
-                        <h5>{product.size}g</h5>
                         {checkValidToken() ? 
                             <div className='buying-options'>
+                                <div className='quanity-section'>
+                                    <div className='size'>
+                                        <h6>SIZE</h6>
+                                        <h5>{product.size}g</h5>
+                                    </div>
+                                    <div className='quanity-amnt'>
+                                        <h6>QUANITY</h6>
+                                        <IconContext.Provider value={{size: '28px', color: '#28a745'}}>
+                                            <div className='quanity-icons'>
+                                                <FaPlusCircle/>
+                                                <span>1</span>
+                                                <FaMinusCircle/>
+                                            </div>
+                                        </IconContext.Provider>
+                                    </div>
+                                </div>
                                 <Button className='cart-button-active'size='lg'>Add to Cart</Button>
                             </div> :
                             <div className='buying-options'>
+                                <span>size</span>
+                                <h5>{product.size}g</h5>
                                 <Button className='cart-button-disabled'size='lg' disabled>Add to Cart</Button>
                                 <p>To place an order online, you'll need to <Link to='/store/login'>Login</Link> or <Link to='/store/register'>create an account</Link></p>
                             </div>}

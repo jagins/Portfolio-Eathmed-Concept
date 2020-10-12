@@ -96,3 +96,31 @@
     border: none;
     width: 100%;
 }
+
+.product-details .buying-options .quanity-section {
+    border: 1px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-details .buying-options .quanity-section .size{
+    width: 50%;
+    border: none;
+}
+
+.product-details .buying-options .quanity-section .quanity-amnt {
+    width: 50%;
+    border: none;
+}
+
+.product-details .buying-options .quanity-section .quanity-amnt .quanity-icons {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+
+.product-details .buying-options .quanity-section .quanity-amnt .quanity-icons span {
+    font-size: 1.3rem;
+}
