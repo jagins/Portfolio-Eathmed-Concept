@@ -6,6 +6,9 @@ import StoreSidebar from '../components/StoreSidebar';
 import StoreProducts from '../components/StoreProducts';
 import {useHistory} from 'react-router-dom';
 import '../Styles/Store.css';
+import {checkValidToken} from '../utils/tokenMethods';
+import {FaShoppingCart} from 'react-icons/fa';
+import {IconContext} from 'react-icons';
 
 function Store()
 {
@@ -13,7 +16,12 @@ function Store()
     return (
         <section className='store'>
             <div className='login'>
-                <Button variant='success' onClick={() => history.push('/store/login')}>Login/Register</Button>
+                {checkValidToken ? (
+                    <IconContext.Provider value={{size: '40px', color: ' #28a745', className: 'cart-btn'}}>
+                        <FaShoppingCart onClick={() => history.push('/store/cart')}/>
+                    </IconContext.Provider> )
+                    : 
+                    <Button variant='success' onClick={() => history.push('/store/login')}>Login/Register</Button>}
             </div>
             <img src={logo} alt='Earthmed Logo'/>
             <StoreHeader/>

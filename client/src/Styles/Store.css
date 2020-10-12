@@ -2,6 +2,7 @@
     text-align: right;
     margin-right: 1.5%;
     margin-top: 1%;
+    cursor: pointer;
 }
 
 .store img {
@@ -54,12 +55,10 @@
 }
 
 .store .showcase {
-    /* border: 1px solid red; */
     display: flex;
 }
 
 .store .product-container {
-    /* border: 1px solid blue; */
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -119,3 +118,4 @@
     background-color: red;
     color: white;
 }
+
