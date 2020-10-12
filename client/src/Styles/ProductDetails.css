@@ -124,3 +124,12 @@
 .product-details .buying-options .quanity-section .quanity-amnt .quanity-icons span {
     font-size: 1.3rem;
 }
+
+.product-details .buying-options .quanity-section .quanity-amnt .quanity-icons .btn {
+    background-color: white;
+    border: none;
+}
+.product-details .buying-options .quanity-section .quanity-amnt .quanity-icons .btn:focus {
+    outline: none;
+    box-shadow: none;
+}

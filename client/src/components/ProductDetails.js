@@ -15,6 +15,7 @@ function ProductDetails()
 {
     const {id} = useParams();
     const [product, setProduct] = useState(null);
+    const [quanity, setQuanity] = useState(1);
 
     useEffect(() => {
         axios.get(`http://localhost:5000/api/products/${id}`)
@@ -39,6 +40,16 @@ function ProductDetails()
                 return null;
         }
     }
+
+    const increase = () => {
+        setQuanity(quanity + 1);
+    }
+
+    const decrease = () => {
+        setQuanity(quanity - 1);
+        if(quanity <= 0)
+            setQuanity(0)
+    }
   
     return (
         <section>
@@ -62,9 +73,9 @@ function ProductDetails()
                                         <h6>QUANITY</h6>
                                         <IconContext.Provider value={{size: '28px', color: '#28a745'}}>
                                             <div className='quanity-icons'>
-                                                <FaPlusCircle/>
-                                                <span>1</span>
-                                                <FaMinusCircle/>
+                                                <Button className='btn' disabled={quanity >=10} onClick={increase}><FaPlusCircle/></Button>
+                                                <span>{quanity}</span>
+                                                <Button className='btn' disabled={quanity <= 1} onClick={decrease}><FaMinusCircle/></Button>
                                             </div>
                                         </IconContext.Provider>
                                     </div>
