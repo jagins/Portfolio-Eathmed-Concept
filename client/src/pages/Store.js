@@ -1,28 +1,16 @@
 import React from 'react';
 import logo from '../images/earthmed-site-logo-bigger.png';
-import Button from 'react-bootstrap/Button';
 import StoreHeader from '../components/StoreHeader';
 import StoreSidebar from '../components/StoreSidebar';
 import StoreProducts from '../components/StoreProducts';
-import {useHistory} from 'react-router-dom';
 import '../Styles/Store.css';
-import {checkValidToken} from '../utils/tokenMethods';
-import {FaShoppingCart} from 'react-icons/fa';
-import {IconContext} from 'react-icons';
+import ShoppingOptions from '../components/ShoppingOptions';
 
 function Store()
 {
-    const history = useHistory();
     return (
         <section className='store'>
-            <div className='login'>
-                {checkValidToken ? (
-                    <IconContext.Provider value={{size: '40px', color: ' #28a745', className: 'cart-btn'}}>
-                        <FaShoppingCart onClick={() => history.push('/store/cart')}/>
-                    </IconContext.Provider> )
-                    : 
-                    <Button variant='success' onClick={() => history.push('/store/login')}>Login/Register</Button>}
-            </div>
+            <ShoppingOptions/>
             <img src={logo} alt='Earthmed Logo'/>
             <StoreHeader/>
            
