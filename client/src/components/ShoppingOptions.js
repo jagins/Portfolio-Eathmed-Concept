@@ -4,8 +4,9 @@ import {checkValidToken} from '../utils/tokenMethods';
 import {IconContext} from 'react-icons';
 import {FaShoppingCart} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
+import {connect} from 'react-redux';
 
-function ShoppingOptions()
+function ShoppingOptions(props)
 {
     const history = useHistory();
     return (
@@ -13,7 +14,7 @@ function ShoppingOptions()
             {checkValidToken() ? (
                 <IconContext.Provider value={{size: '40px', color: ' #28a745', className: 'cart-btn'}}>
                     <FaShoppingCart onClick={() => history.push('/store/cart')}/>
-                    <span className='cart-badge'>1</span>
+            <span className='cart-badge'>{props.shoppingCart.length}</span>
                 </IconContext.Provider> )
                 : 
                 <Button variant='success' onClick={() => history.push('/store/login')}>Login/Register</Button>}
@@ -21,4 +22,10 @@ function ShoppingOptions()
     );
 }
 
-export default ShoppingOptions;
+const mapStateToProps = state => {
+    return {
+        shoppingCart: state.shoppingCart
+    }
+}
+
+export default connect(mapStateToProps, {})(ShoppingOptions);
