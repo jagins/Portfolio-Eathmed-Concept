@@ -141,3 +141,16 @@ section .login {
     margin-right: 2%;
     cursor: pointer;
 }
+
+section .login .cart-badge {
+    font-size: 1rem;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    background-color: #418deb;
+    border-radius: 50%;
+    text-align: center;
+}

@@ -13,6 +13,7 @@ function ShoppingOptions()
             {checkValidToken() ? (
                 <IconContext.Provider value={{size: '40px', color: ' #28a745', className: 'cart-btn'}}>
                     <FaShoppingCart onClick={() => history.push('/store/cart')}/>
+                    <span className='cart-badge'>1</span>
                 </IconContext.Provider> )
                 : 
                 <Button variant='success' onClick={() => history.push('/store/login')}>Login/Register</Button>}
