@@ -73,3 +73,13 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
             .catch(err => console.log(err));
         }
 }
+
+export const addProductToCart = (product, quanity) => dispatch => {
+    dispatch({
+            type: 'ADD_TO_CART', 
+            payload: {
+                ...product,
+                quanity
+            }
+        })
+}

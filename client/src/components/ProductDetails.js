@@ -11,8 +11,10 @@ import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
 import {checkValidToken} from '../utils/tokenMethods';
 import {IconContext} from 'react-icons';
 import ShoppingOptions from './ShoppingOptions';
+import {connect} from 'react-redux';
+import {addProductToCart} from '../actions/index';
 
-function ProductDetails()
+function ProductDetails(props)
 {
     const {id} = useParams();
     const [product, setProduct] = useState(null);
@@ -51,7 +53,11 @@ function ProductDetails()
         if(quanity <= 0)
             setQuanity(0)
     }
-  
+    
+    const addToCart = () => {
+        props.addProductToCart(product, quanity);
+    }
+
     return (
         <section>
             <ShoppingOptions/>
@@ -82,7 +88,7 @@ function ProductDetails()
                                         </IconContext.Provider>
                                     </div>
                                 </div>
-                                <Button className='cart-button-active'size='lg'>Add to Cart</Button>
+                                <Button className='cart-button-active'size='lg' onClick={addToCart}>Add to Cart</Button>
                             </div> :
                             <div className='buying-options'>
                                 <span>size</span>
@@ -135,4 +141,8 @@ function ProductDetails()
     );
 }
 
-export default ProductDetails;
+const mapStateToProps = state => {
+    return state;
+}
+
+export default connect(mapStateToProps, {addProductToCart})(ProductDetails);
