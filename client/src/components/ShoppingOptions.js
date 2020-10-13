@@ -10,7 +10,7 @@ function ShoppingOptions()
     const history = useHistory();
     return (
         <div className='login'>
-            {checkValidToken ? (
+            {checkValidToken() ? (
                 <IconContext.Provider value={{size: '40px', color: ' #28a745', className: 'cart-btn'}}>
                     <FaShoppingCart onClick={() => history.push('/store/cart')}/>
                 </IconContext.Provider> )
