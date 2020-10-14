@@ -1,6 +1,11 @@
-/* section {
-    margin-top: 10%;
+/* .shopping-cart-details {
+    border: 1px solid red;
 } */
+
+.shopping-cart-details .group1 {
+    display: flex;
+    justify-content: space-around;
+}
 
 .cart-empty {
     border: 1px solid lightgray;
@@ -13,17 +18,18 @@
 
 .order-details {
     border: 1px solid lightgray;
-    width: 50%;
+    width: 40%;
     padding: 2%;
-    margin: 0 auto;
+    height: 100%;
 }
 
 .things {
     border: 1px solid lightgray;
-    width: 50%;
+    width: 40%;
     padding: 2%;
-    margin: 0 auto;
-    margin-top: 2%; 
+    height: 100%;
+    margin-left: 3.8%;
+    margin-top: 1%;
 }
 
 .things div {
@@ -44,7 +50,9 @@ section .things h3 {
 
 .cart-item {
     border: 1px solid lightgray;
-    width: 30%;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2%;
 }
 
 .cart-item img {
@@ -77,4 +85,25 @@ section .things h3 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.shopping-cart-details .shopping-cart-list {
+    border: 1px solid lightgray;
+    width: 45%;
+}
+
+.shopping-cart-details .shopping-cart-list .your-cart-details {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+.shopping-cart-details .shopping-cart-list .your-cart-details h3 {
+    justify-content: flex-start;
+}
+
+
+.shopping-cart-details .shopping-cart-list .your-cart-details p {
+    margin-left: 78%;
 }

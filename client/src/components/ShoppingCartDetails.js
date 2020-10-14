@@ -10,6 +10,7 @@ import idCardAlt from '@iconify/icons-vs/id-card-alt';
 import moneyBillSolid from '@iconify/icons-la/money-bill-solid';
 import baselineVerifiedUser from '@iconify/icons-ic/baseline-verified-user';
 import CartItem from './CartItem';
+import '../Styles/ShoppingCart.css';
 
 const StyledRadio = withStyles({
     root: {
@@ -23,16 +24,28 @@ const StyledRadio = withStyles({
 
 function ShoppingCartDetails(props) {
     return(
-        <section>
-            <div className='order-details'>
-                <h3>Order Details</h3>
-                <h5>Addison, IL</h5>
-                <p>852 S. Westgate St., Addison, IL 60101</p>
-                <FormControlLabel
-                    control={<StyledRadio checked={true} />}
-                    label='In Store Pickup'
-                />
+        <section className='shopping-cart-details'>
+            <div className='group1'>
+                <div className='order-details'>
+                    <h3>Order Details</h3>
+                    <h5>Addison, IL</h5>
+                    <p>852 S. Westgate St., Addison, IL 60101</p>
+                    <FormControlLabel
+                        control={<StyledRadio checked={true} />}
+                        label='In Store Pickup'
+                    />
+                </div>
+                <div className='shopping-cart-list'>
+                    <div className='shopping-cart-header'>
+                        <div className='your-cart-details'>
+                            <h3>Your Cart</h3>
+                            <p>{props.shoppingCart.length} {props.shoppingCart.length > 1 ? 'items':'item'}</p>
+                        </div>
+                        {props.shoppingCart.map(item => <CartItem key={item.id} item={item}/>)}
+                    </div>
+                </div>
             </div>
+
             <div className='things'>
                 <h3>Things to Know</h3>
                 <div>
@@ -54,15 +67,6 @@ function ShoppingCartDetails(props) {
                     <Icon icon={baselineVerifiedUser} style={{fontSize: '4rem', color: 'green'}}/>
                     <p>Illinois residents 21+ may buy up to 30 grams (a little over 1 ounce of flower), 500mg of THC-infused products (like edibles), and 5 grams of concentrate products (like vape carts or concentrates). Non-residents may purchase half of these daily cumulative amounts.</p>
                 </div>
-            </div>
-
-            <div className='shopping-cart-list'>
-                <div className='shopping-cart-header'>
-                    <h3>Your Cart</h3>
-                    <p>{props.shoppingCart.length} {props.shoppingCart.length > 1 ? 'items':'item'}</p>
-                    {props.shoppingCart.map(item => <CartItem key={item.id} item={item}/>)}
-                </div>
-
             </div>
         </section>
     );
