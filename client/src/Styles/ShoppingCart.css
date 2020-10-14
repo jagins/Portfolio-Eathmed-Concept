@@ -41,3 +41,40 @@
 section .things h3 {
     margin-bottom: 2%;
 }
+
+.cart-item {
+    border: 1px solid lightgray;
+    width: 30%;
+}
+
+.cart-item img {
+    width: 20%;
+}
+
+.cart-item .cart-item-header {
+    display: flex;
+}
+
+.cart-item .product-name {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.cart-item .cart-item-bottom span {
+    font-size: 1.3rem;
+}
+
+.cart-item .cart-item-bottom .btn {
+    background-color: white;
+    border: none;
+}
+.cart-item .cart-item-bottom .btn .quanity-icons:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.cart-item .cart-item-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
