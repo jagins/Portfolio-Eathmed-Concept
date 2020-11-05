@@ -5,7 +5,7 @@ const initialState = {
     subtotal_amount: 0.0,
     tax: {
         state: 0.1325,
-        flower: 0.10,
+        below_35: 0.10,
         edible: 0.20,
         above_35: 0.25
     },
