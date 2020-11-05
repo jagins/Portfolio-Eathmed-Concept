@@ -107,3 +107,19 @@ section .things h3 {
 .shopping-cart-details .shopping-cart-list .your-cart-details p {
     margin-left: 78%;
 }
+.shopping-cart-details .group2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart-details .line-items {
+    width: 40%;
+    margin-top: 2%;
+    margin-right: 9%;
+}
+
+.line-items .line-item {
+    display: flex;
+    justify-content: space-between;
+
+}
