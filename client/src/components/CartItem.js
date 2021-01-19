@@ -5,7 +5,7 @@ import {FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 
 function CartItem(props) {
-    const [price, setPrice] = useState(props.item.price);
+    const [price] = useState(props.item.price);
     return (
         <div className='cart-item'>
             <div className='cart-item-header'>

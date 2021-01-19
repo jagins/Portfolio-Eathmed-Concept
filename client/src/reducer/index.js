@@ -2,15 +2,6 @@ const initialState = {
     isLoading: false,
     products: [],
     shoppingCart: [],
-    subtotal_amount: 0.0,
-    tax: {
-        state: 0.1325,
-        below_35: 0.10,
-        edible: 0.20,
-        above_35: 0.25
-    },
-    tax_amount: 0,
-    total_amount: 0.0,
     error: ''
 }
 
