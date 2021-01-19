@@ -4,8 +4,7 @@ let currentType ='';
 export const getProducts = (type) => dispatch =>
 {
     currentType = type;
-    // axios.get(`${process.env.REACT_APP_URL}/products?product_type=${type}`)
-    axios.get(`http://localhost:5000/api/products?product_type=${type}`)
+    axios.get(`${process.env.REACT_APP_URL}/products?product_type=${type}`)
     .then(res => {
         dispatch({type: 'GET_PRODUCTS', payload: res.data})
         dispatch({type: 'SUCCESS'});
