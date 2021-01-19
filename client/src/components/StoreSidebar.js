@@ -111,13 +111,6 @@ function StoreSidebar(props)
             <div>
                 <h4>Brand</h4>
                 <FormGroup row>
-                    {/* {brands.length === 1 ? 
-                        <FormControlLabel 
-                            key={brands[0]} 
-                            control={<Checkbox/>} 
-                            label={brands[0]} 
-                            disabled
-                        />  :  */}
                     {brands.map((brand, index) => 
                         <FormControlLabel 
                             key={index} 
@@ -136,7 +129,6 @@ function StoreSidebar(props)
             <div>
                 <h4>Size</h4>
                 <FormGroup row>
-                    {/* {sizes.length === 1 ? <FormControlLabel key={sizes[0]} control={<Checkbox/>} label={`${sizes[0]}g`} disabled/> : */}
                     {sizes.map((size, index) => <FormControlLabel key={index} control={<Checkbox/>} label={`${size}g`} />)}
                 </FormGroup>
             </div>

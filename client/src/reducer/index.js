@@ -1,7 +1,7 @@
 const initialState = {
     isLoading: false,
     products: [],
-    productType: '',
+    shoppingCart: [],
     error: ''
 }
 
@@ -21,6 +21,17 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 isLoading: false
             }
+        case 'ADD_TO_CART':
+            return {
+                ...state,
+                shoppingCart: [...state.shoppingCart, action.payload]
+            }
+
+        case 'CALCULATE_LINE_ITEMS':
+           return {
+               ...state,
+               subtotal_amount: state.shoppingCart.reduce((total, currentItem) => total + currentItem.price),
+           }
         default:
             return state;
     }

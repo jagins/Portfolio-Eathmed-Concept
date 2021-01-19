@@ -1,0 +1,125 @@
+/* .shopping-cart-details {
+    border: 1px solid red;
+} */
+
+.shopping-cart-details .group1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cart-empty {
+    border: 1px solid lightgray;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.order-details {
+    border: 1px solid lightgray;
+    width: 40%;
+    padding: 2%;
+    height: 100%;
+}
+
+.things {
+    border: 1px solid lightgray;
+    width: 40%;
+    padding: 2%;
+    height: 100%;
+    margin-left: 3.8%;
+    margin-top: 1%;
+}
+
+.things div {
+    display: flex;
+    margin-top: 1%;
+}
+
+.things p {
+    margin-left: 5%;
+    width: 65%;
+    text-align: left;
+    margin-top: 1%;
+}
+
+section .things h3 {
+    margin-bottom: 2%;
+}
+
+.cart-item {
+    border: 1px solid lightgray;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.cart-item img {
+    width: 20%;
+}
+
+.cart-item .cart-item-header {
+    display: flex;
+}
+
+.cart-item .product-name {
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.cart-item .cart-item-bottom span {
+    font-size: 1.3rem;
+}
+
+.cart-item .cart-item-bottom .btn {
+    background-color: white;
+    border: none;
+}
+.cart-item .cart-item-bottom .btn .quanity-icons:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.cart-item .cart-item-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shopping-cart-details .shopping-cart-list {
+    border: 1px solid lightgray;
+    width: 45%;
+}
+
+.shopping-cart-details .shopping-cart-list .your-cart-details {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 2%;
+}
+
+.shopping-cart-details .shopping-cart-list .your-cart-details h3 {
+    justify-content: flex-start;
+}
+
+
+.shopping-cart-details .shopping-cart-list .your-cart-details p {
+    margin-left: 78%;
+}
+.shopping-cart-details .group2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart-details .line-items {
+    width: 40%;
+    margin-top: 2%;
+    margin-right: 9%;
+}
+
+.line-items .line-item {
+    display: flex;
+    justify-content: space-between;
+
+}

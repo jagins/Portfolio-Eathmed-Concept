@@ -17,8 +17,7 @@ function StoreProducts(props)
 const mapStateToProps = state => {
     return {
         isLoading: state.isLoading,
-        products: state.products,
-        // error: state.error
+        products: state.products
     }
 }
 
