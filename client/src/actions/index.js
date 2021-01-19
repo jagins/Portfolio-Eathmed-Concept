@@ -33,8 +33,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
                 bString += boxes[j] + ',';
             }
 
-            // axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&strain_type=${string}&company_name=${bString}`)
-            axios.get(`http://localhost:5000/api/products?product_type=${currentType}&strain_type=${string}&company_name=${bString}`)
+            axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&strain_type=${string}&company_name=${bString}`)
             .then(res => {
                 dispatch({type: 'GET_PRODUCTS', payload: res.data})
                 dispatch({type: 'SUCCESS'});
@@ -49,8 +48,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
                 bString += boxes[j] + ',';
             }
 
-            // axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&company_name=${bString}`)
-            axios.get(`http://localhost:5000/api/products?product_type=${currentType}&company_name=${bString}`)
+            axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&company_name=${bString}`)
             .then(res => {
                 dispatch({type: 'GET_PRODUCTS', payload: res.data})
                 dispatch({type: 'SUCCESS'});
@@ -64,8 +62,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
                 if(strainType[i].value)
                     string += strainType[i].name + ',';
             }
-            // axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&strain_type=${string}`)
-            axios.get(`http://localhost:5000/api/products?product_type=${currentType}&strain_type=${string}`)
+            axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&strain_type=${string}`)
             .then(res => {
                 dispatch({type: 'GET_PRODUCTS', payload: res.data})
                 dispatch({type: 'SUCCESS'});
