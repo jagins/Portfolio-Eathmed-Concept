@@ -23,7 +23,7 @@ function Register2({data}) {
         if(password === confirmPassword)
         {
             const registrationData = {...data, password};
-            axios.post('http://localhost:5000/api/auth/register', registrationData)
+            axios.post(`${process.env.REACT_APP_URL}/auth/register`, registrationData)
             .then(res => {
                 setToken(res.data.token);
                 history.push('/store');
