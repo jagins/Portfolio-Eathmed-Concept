@@ -16,9 +16,9 @@ function CartItem(props) {
             <div className='cart-item-bottom'>
                 <IconContext.Provider value={{size: '28px', color: '#28a745'}}>
                     <div className='quanity-icons'>
-                        <Button className='btn' disabled={false}><FaPlusCircle/></Button>
-                        <span>0</span>
-                        <Button className='btn' disabled={false}><FaMinusCircle/></Button>
+                        <Button className='btn' disabled={false} onClick={() => 'hello'}><FaPlusCircle/></Button>
+                        <span>{props.item.quanity}</span>
+                        <Button className='btn' disabled={false} onClick={() => 'its me'}><FaMinusCircle/></Button>
                     </div>
                 </IconContext.Provider>
                 <h4>${price}</h4>

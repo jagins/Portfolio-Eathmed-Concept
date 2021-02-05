@@ -4,7 +4,7 @@ let currentType ='';
 export const getProducts = (type) => dispatch =>
 {
     currentType = type;
-    axios.get(`${process.env.REACT_APP_URL}/products?product_type=${type}`)
+    axios.get(`${process.env.REACT_APP_LOCAL}/products?product_type=${type}`)
     .then(res => {
         dispatch({type: 'GET_PRODUCTS', payload: res.data})
         dispatch({type: 'SUCCESS'});
@@ -32,7 +32,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
                 bString += boxes[j] + ',';
             }
 
-            axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&strain_type=${string}&company_name=${bString}`)
+            axios.get(`${process.env.REACT_APP_LOCAL}/products?product_type=${currentType}&strain_type=${string}&company_name=${bString}`)
             .then(res => {
                 dispatch({type: 'GET_PRODUCTS', payload: res.data})
                 dispatch({type: 'SUCCESS'});
@@ -47,7 +47,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
                 bString += boxes[j] + ',';
             }
 
-            axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&company_name=${bString}`)
+            axios.get(`${process.env.REACT_APP_LOCAL}/products?product_type=${currentType}&company_name=${bString}`)
             .then(res => {
                 dispatch({type: 'GET_PRODUCTS', payload: res.data})
                 dispatch({type: 'SUCCESS'});
@@ -61,7 +61,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
                 if(strainType[i].value)
                     string += strainType[i].name + ',';
             }
-            axios.get(`${process.env.REACT_APP_URL}/products?product_type=${currentType}&strain_type=${string}`)
+            axios.get(`${process.env.REACT_APP_LOCAL}/products?product_type=${currentType}&strain_type=${string}`)
             .then(res => {
                 dispatch({type: 'GET_PRODUCTS', payload: res.data})
                 dispatch({type: 'SUCCESS'});
@@ -78,4 +78,8 @@ export const addProductToCart = (product, quanity) => dispatch => {
                 quanity
             }
         })
+}
+
+export const calulcateLineItems = () => dispatch => {
+    dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }

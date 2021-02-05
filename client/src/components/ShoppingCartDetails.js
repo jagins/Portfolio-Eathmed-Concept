@@ -10,6 +10,7 @@ import idCardAlt from '@iconify/icons-vs/id-card-alt';
 import moneyBillSolid from '@iconify/icons-la/money-bill-solid';
 import baselineVerifiedUser from '@iconify/icons-ic/baseline-verified-user';
 import CartItem from './CartItem';
+import {calulcateLineItems} from '../actions';
 import '../Styles/ShoppingCart.css';
 
 const StyledRadio = withStyles({
@@ -23,48 +24,8 @@ const StyledRadio = withStyles({
 })((props) => <Radio color='default' {...props}/>)
 
 function ShoppingCartDetails(props) {
-    const [lineItems, setLineItems] = useState({
-        subTotal: 0,
-        tax: 0,
-        total: 0
-    })
-
-    const calulcateLineItems = () => {
-        let subTotal = 0;
-        let tax = 0.130;
-        let total = 0;
-        
-        for(let i = 0; i < props.shoppingCart.length; i++)
-        {
-            subTotal += props.shoppingCart[i].price;
-        }
-        
-        for(let i = 0; i < props.shoppingCart.length; i++)
-        {
-            if(props.shoppingCart[i].product_type === 'Edible')
-            {
-                tax += 0.20;
-                break;
-            }
-            else if(props.shoppingCart[i].thca >= 35)
-            {
-                tax += 0.25;
-                break;
-            }
-        }
-        
-        tax = subTotal * tax;
-        total += subTotal + tax;
-        
-        setLineItems({
-            subTotal,
-            tax,
-            total
-        })
-    }
-
     useEffect(() => {
-        calulcateLineItems()
+        props.calulcateLineItems()
     }, [])
 
     return(
@@ -117,21 +78,21 @@ function ShoppingCartDetails(props) {
                 <div className='line-items'>
                     <div className='line-item'>
                         <p>Subtotal</p>
-                        <p>${lineItems.subTotal}</p>
+                        <p>${props.subtotal_amount}</p>
                     </div>
                     
                     <hr/>
                     
                     <div className='line-item'>
                         <p>Tax</p>
-                        <p>${parseFloat(lineItems.tax).toFixed(2)}</p>
+                        <p>${parseFloat(props.tax).toFixed(2)}</p>
                     </div>
                     
                     <hr/>
                     
                     <div className='line-item'>
                         <h3>Total</h3>
-                        <h3>${parseFloat(lineItems.total).toFixed(2)}</h3>
+                        <h3>${parseFloat(props.total).toFixed(2)}</h3>
                     </div>
                 </div>
             </div>
@@ -143,8 +104,11 @@ function ShoppingCartDetails(props) {
 
 const mapStateToProps = state => {
     return {
-        shoppingCart: state.shoppingCart
+        shoppingCart: state.shoppingCart,
+        subtotal_amount: state.subtotal_amount,
+        total: state.total,
+        tax: state.tax
     }
 }
 
-export default connect(mapStateToProps, {})(ShoppingCartDetails);
+export default connect(mapStateToProps, {calulcateLineItems})(ShoppingCartDetails);
