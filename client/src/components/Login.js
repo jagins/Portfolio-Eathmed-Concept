@@ -26,7 +26,7 @@ function Login()
     const handleSubmit = (event) => 
     {
         event.preventDefault();
-        axios.post('http://localhost:5000/api/auth/login', state)
+        axios.post(`${process.env.REACT_APP_URL}/auth/login`, state)
         .then(res => {
             setToken(res.data.token);
             history.push('/store');
