@@ -1,8 +1,14 @@
+import { act } from "react-dom/test-utils"
+import { FaIoxhost } from "react-icons/fa"
+
 const initialState = {
     isLoading: false,
     products: [],
     shoppingCart: [],
-    error: ''
+    error: '',
+    subtotal_amount: 0,
+    total: 0,
+    tax: 0
 }
 
 export const reducer = (state = initialState, action) =>
@@ -28,10 +34,70 @@ export const reducer = (state = initialState, action) =>
             }
 
         case 'CALCULATE_LINE_ITEMS':
+            let tax = 0.26;
+            let subtotal_amount = 0;
+            for(let i = 0; i < state.shoppingCart.length; i++)
+            {
+                subtotal_amount += state.shoppingCart[i].price * state.shoppingCart[i].quanity;
+            }
+            
+            for(let i = 0; i < state.shoppingCart.length; i++)
+            {
+                if(state.shoppingCart[i].product_type === 'Edible')
+                {
+                    tax += 0.20;
+                    break;
+                }
+                else if(state.shoppingCart[i].thca >= 35)
+                {
+                    tax += 0.25;
+                    break;
+                }
+            }
+            tax *= subtotal_amount;
+            let total = tax + subtotal_amount;
            return {
                ...state,
-               subtotal_amount: state.shoppingCart.reduce((total, currentItem) => total + currentItem.price),
+                tax,
+                subtotal_amount,
+                total
            }
+
+        case 'INCREASE_CART_ITEM':
+            return {
+                ...state,
+                shoppingCart: state.shoppingCart.map(function(item) {
+                    if(item.product_name === action.payload.product_name) {
+                        return {
+                            ...item,
+                            quanity: item.quanity + 1
+                        }
+                    }
+                    return item;
+                })
+            }
+        
+        case 'DECREASE_CART_ITEM':
+            const shoppingCart = state.shoppingCart.map(function(item) {
+                if(item.product_name === action.payload.product_name) {
+                    if(item.quanity <= 0)
+                        return {
+                            ...item,
+                            quanity: 0
+                        }
+                    else
+                        return {
+                            ...item,
+                            quanity: item.quanity - 1
+                        }
+                }
+                else 
+                    return item;
+            })
+            return {
+                ...state,
+                shoppingCart:  shoppingCart.filter(item => item.quanity > 0) 
+            }
         default:
             return state;
     }
