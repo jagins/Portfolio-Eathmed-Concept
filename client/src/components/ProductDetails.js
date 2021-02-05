@@ -21,7 +21,7 @@ function ProductDetails(props)
     const [quanity, setQuanity] = useState(1);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/api/products/${id}`)
+        axios.get(`${process.env.REACT_APP_URL}/products/${id}`)
         .then(res => setProduct(res.data))
         .catch(err => console.log(err))
     }, [id])
