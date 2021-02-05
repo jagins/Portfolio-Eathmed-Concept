@@ -1,3 +1,4 @@
+import { act } from "react-dom/test-utils"
 import { FaIoxhost } from "react-icons/fa"
 
 const initialState = {
@@ -61,6 +62,42 @@ export const reducer = (state = initialState, action) =>
                 subtotal_amount,
                 total
            }
+
+        case 'INCREASE_CART_ITEM':
+            return {
+                ...state,
+                shoppingCart: state.shoppingCart.map(function(item) {
+                    if(item.product_name === action.payload.product_name) {
+                        return {
+                            ...item,
+                            quanity: item.quanity + 1
+                        }
+                    }
+                    return item;
+                })
+            }
+        
+        case 'DECREASE_CART_ITEM':
+            const shoppingCart = state.shoppingCart.map(function(item) {
+                if(item.product_name === action.payload.product_name) {
+                    if(item.quanity <= 0)
+                        return {
+                            ...item,
+                            quanity: 0
+                        }
+                    else
+                        return {
+                            ...item,
+                            quanity: item.quanity - 1
+                        }
+                }
+                else 
+                    return item;
+            })
+            return {
+                ...state,
+                shoppingCart:  shoppingCart.filter(item => item.quanity > 0) 
+            }
         default:
             return state;
     }

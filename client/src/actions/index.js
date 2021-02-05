@@ -83,3 +83,13 @@ export const addProductToCart = (product, quanity) => dispatch => {
 export const calulcateLineItems = () => dispatch => {
     dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }
+
+export const increaseCartItem = (product) => dispatch => {
+    dispatch({type: 'INCREASE_CART_ITEM', payload: product});
+    dispatch({type: 'CALCULATE_LINE_ITEMS'});
+}
+
+export const decreaseCartItem = (product) => dispatch => {
+    dispatch({type: 'DECREASE_CART_ITEM', payload: product});
+    dispatch({type: 'CALCULATE_LINE_ITEMS'});
+}
