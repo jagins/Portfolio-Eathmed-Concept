@@ -78,7 +78,7 @@ function ShoppingCartDetails(props) {
                 <div className='line-items'>
                     <div className='line-item'>
                         <p>Subtotal</p>
-                        <p>${props.subtotal_amount}</p>
+                        <p>${parseFloat(props.subtotal_amount).toFixed(2)}</p>
                     </div>
                     
                     <hr/>
