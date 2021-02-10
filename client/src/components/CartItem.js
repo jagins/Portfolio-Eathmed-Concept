@@ -4,7 +4,7 @@ import {IconContext} from 'react-icons';
 import {FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
-import {increaseCartItem, decreaseCartItem} from '../actions';
+import {increaseCartItem, decreaseCartItem, removeCartItem} from '../actions';
 
 function CartItem(props) {
     const increase = () => {
@@ -30,11 +30,11 @@ function CartItem(props) {
                 </IconContext.Provider>
                 <h4>${props.item.price}</h4>
                 <IconContext.Provider value={{size: '28px', color: 'gray'}}>
-                    <FaRegTrashAlt/>
+                    <FaRegTrashAlt onClick={() => props.removeCartItem(props.item)}/>
                 </IconContext.Provider>
             </div>
         </div>
     );
 }
 
-export default connect(null, {increaseCartItem, decreaseCartItem})(CartItem);
+export default connect(null, {increaseCartItem, decreaseCartItem, removeCartItem})(CartItem);
