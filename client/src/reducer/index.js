@@ -101,6 +101,12 @@ export const reducer = (state = initialState, action) =>
                 ...state,
                 shoppingCart: state.shoppingCart.filter(item => item.product_name !== action.payload.product_name)
             }
+        
+        case 'DELETE_CART': 
+            return {
+                ...state,
+                shoppingCart: []
+            }
         default:
             return state;
     }
