@@ -29,7 +29,7 @@ function CartItem(props) {
                     </div>
                 </IconContext.Provider>
                 <h4>${props.item.price}</h4>
-                <IconContext.Provider value={{size: '28px', color: 'gray'}}>
+                <IconContext.Provider value={{size: '28px', color: 'gray', style: {cursor: 'pointer'}}}>
                     <FaRegTrashAlt onClick={() => props.removeCartItem(props.item)}/>
                 </IconContext.Provider>
             </div>
