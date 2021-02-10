@@ -1,6 +1,3 @@
-import { act } from "react-dom/test-utils"
-import { FaIoxhost } from "react-icons/fa"
-
 const initialState = {
     isLoading: false,
     products: [],
