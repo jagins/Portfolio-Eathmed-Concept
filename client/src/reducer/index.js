@@ -1,6 +1,3 @@
-import { act } from "react-dom/test-utils"
-import { FaIoxhost } from "react-icons/fa"
-
 const initialState = {
     isLoading: false,
     products: [],
@@ -97,6 +94,18 @@ export const reducer = (state = initialState, action) =>
             return {
                 ...state,
                 shoppingCart:  shoppingCart.filter(item => item.quanity > 0) 
+            }
+
+        case 'REMOVE_CART_ITEM':
+            return {
+                ...state,
+                shoppingCart: state.shoppingCart.filter(item => item.product_name !== action.payload.product_name)
+            }
+        
+        case 'DELETE_CART': 
+            return {
+                ...state,
+                shoppingCart: []
             }
         default:
             return state;

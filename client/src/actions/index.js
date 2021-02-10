@@ -93,3 +93,12 @@ export const decreaseCartItem = (product) => dispatch => {
     dispatch({type: 'DECREASE_CART_ITEM', payload: product});
     dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }
+
+export const removeCartItem = (product) => dispatch => {
+    dispatch({type: 'REMOVE_CART_ITEM', payload: product});
+    dispatch({type: 'CALCULATE_LINE_ITEMS'});
+}
+
+export const deleteCart = () => dispatch => {
+    dispatch({type: 'DELETE_CART'});
+}

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -10,7 +10,10 @@ import idCardAlt from '@iconify/icons-vs/id-card-alt';
 import moneyBillSolid from '@iconify/icons-la/money-bill-solid';
 import baselineVerifiedUser from '@iconify/icons-ic/baseline-verified-user';
 import CartItem from './CartItem';
-import {calulcateLineItems} from '../actions';
+import {calulcateLineItems, deleteCart} from '../actions';
+import Button from 'react-bootstrap/Button';
+import swal from 'sweetalert';
+import {useHistory} from 'react-router-dom';
 import '../Styles/ShoppingCart.css';
 
 const StyledRadio = withStyles({
@@ -24,10 +27,27 @@ const StyledRadio = withStyles({
 })((props) => <Radio color='default' {...props}/>)
 
 function ShoppingCartDetails(props) {
+    const history = useHistory();
+
     useEffect(() => {
         props.calulcateLineItems()
     }, [])
 
+    const placeOrder = () => {
+        const orderNumber = Math.floor(Math.random() * 1000000);
+        swal({
+            title: 'Order Placed!',
+            text: `Your order has been placed! Please arrive within 2 hours to claim your purchase. Upon check in please give the Earthmed Associate your order number: ${orderNumber}`,
+            icon: 'success',
+            button: 'OK' 
+        })
+        .then(done => {
+            if(done) {
+                history.push('/store');
+                props.deleteCart();
+            }
+        })
+    }
     return(
         <section className='shopping-cart-details'>
             <div className='group1'>
@@ -94,10 +114,9 @@ function ShoppingCartDetails(props) {
                         <h3>Total</h3>
                         <h3>${parseFloat(props.total).toFixed(2)}</h3>
                     </div>
+                    <Button className='order-btn' size='lg' onClick={placeOrder}>Place Order</Button>
                 </div>
             </div>
-
-        
         </section>
     );
 }
@@ -111,4 +130,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, {calulcateLineItems})(ShoppingCartDetails);
+export default connect(mapStateToProps, {calulcateLineItems, deleteCart})(ShoppingCartDetails);
