@@ -123,3 +123,13 @@ section .things h3 {
     justify-content: space-between;
 
 }
+
+.line-items .order-btn {
+    border: 1px solid red;
+    margin-left: 28vw;
+    width: 30%;
+    padding: 2%;
+    border: #28a745;
+    margin-top: 5%;
+    background-color: #28a745;
+}

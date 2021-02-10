@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import Radio from '@material-ui/core/Radio';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -11,6 +11,7 @@ import moneyBillSolid from '@iconify/icons-la/money-bill-solid';
 import baselineVerifiedUser from '@iconify/icons-ic/baseline-verified-user';
 import CartItem from './CartItem';
 import {calulcateLineItems} from '../actions';
+import Button from 'react-bootstrap/Button';
 import '../Styles/ShoppingCart.css';
 
 const StyledRadio = withStyles({
@@ -94,10 +95,9 @@ function ShoppingCartDetails(props) {
                         <h3>Total</h3>
                         <h3>${parseFloat(props.total).toFixed(2)}</h3>
                     </div>
+                    <Button className='order-btn' size='lg'>Place Order</Button>
                 </div>
             </div>
-
-        
         </section>
     );
 }
