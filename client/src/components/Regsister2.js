@@ -52,7 +52,7 @@ function Register2({data}) {
                     value={confirmPassword}
                 />
                 {error.length > 0 && <span>Passwords must match</span> }
-                <Button type='submit'>Create Password</Button>
+                <Button className='next-btn' type='submit'>Create Password</Button>
             </form>
         </div>
     );
