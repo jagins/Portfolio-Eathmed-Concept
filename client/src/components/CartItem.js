@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {FaRegTrashAlt} from 'react-icons/fa';
 import {IconContext} from 'react-icons';
 import {FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
