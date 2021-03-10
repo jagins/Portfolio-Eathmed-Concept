@@ -4,7 +4,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Avartar from '@material-ui/core/Avatar';
-import {filterCurrentProducts} from '../redux/actions';
+import {filterCurrentProducts} from '../../redux/actions';
 import {connect} from 'react-redux';
 
 function StoreSidebar(props)

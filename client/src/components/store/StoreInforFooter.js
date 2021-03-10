@@ -2,7 +2,7 @@ import React from 'react';
 import { MdPlace, MdPhone } from 'react-icons/md';
 import { FaRegClock, FaEnvelope } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
-import '../Styles/Footer.css'
+import '../../Styles/Footer.css'
 
 function StoreInfoFooter()
 {
