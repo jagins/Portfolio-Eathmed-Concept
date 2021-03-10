@@ -1,0 +1,32 @@
+section {
+    .top {
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-left: 30%;
+
+        ul {
+            list-style-position: inside;
+
+            li {
+                text-align: left;
+            }
+        }
+
+        h3 {
+            margin-top: 4;
+        }
+    }
+
+    .products-list {
+        margin-left: 2%;
+
+        li {
+            margin-top: 3%;
+        }
+    }
+
+    .hours {
+        margin-top: 5%;
+    }
+}
