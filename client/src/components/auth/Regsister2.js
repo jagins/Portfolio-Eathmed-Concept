@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
-import {setToken} from '../utils/tokenMethods';
+import {setToken} from '../../utils/tokenMethods';
 import Button from 'react-bootstrap/Button';
 
 function Register2({data}) {

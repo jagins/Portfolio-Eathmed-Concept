@@ -12,8 +12,8 @@ import ProductsPage from './pages/ProductsPage';
 import MarketingFooter from './components/global/MarketingFooter';
 import ProductDetails from './components/ProductDetails';
 import Store from './pages/Store';
-import Login from './components/Login';
-import Register from './components/Register';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import ShoppingCart from './pages/ShoppingCart';
 import './App.css';
 
