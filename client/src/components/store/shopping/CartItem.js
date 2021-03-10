@@ -4,7 +4,7 @@ import {IconContext} from 'react-icons';
 import {FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
-import {increaseCartItem, decreaseCartItem, removeCartItem} from '../redux/actions';
+import {increaseCartItem, decreaseCartItem, removeCartItem} from '../../../redux/actions';
 
 function CartItem(props) {
     const increase = () => {

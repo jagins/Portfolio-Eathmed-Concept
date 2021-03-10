@@ -9,7 +9,7 @@ import {Icon} from '@iconify/react';
 import idCardAlt from '@iconify/icons-vs/id-card-alt';
 import moneyBillSolid from '@iconify/icons-la/money-bill-solid';
 import baselineVerifiedUser from '@iconify/icons-ic/baseline-verified-user';
-import CartItem from '../../CartItem';
+import CartItem from './CartItem';
 import {calulcateLineItems, deleteCart} from '../../../redux/actions';
 import Button from 'react-bootstrap/Button';
 import swal from 'sweetalert';
