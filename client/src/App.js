@@ -10,7 +10,7 @@ import PlantsPage from './pages/PlantsPage'
 import HoursPage from './pages/HoursPage';
 import ProductsPage from './pages/ProductsPage';
 import MarketingFooter from './components/global/MarketingFooter';
-import ProductDetails from './components/ProductDetails';
+import ProductDetails from './components/products/ProductDetails';
 import Store from './pages/Store';
 import Login from './pages/Login';
 import Register from './pages/Register';

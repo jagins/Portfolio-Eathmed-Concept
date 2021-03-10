@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import axios from 'axios';
-import '../Styles/ProductDetails.css';
+import '../../Styles/ProductDetails.css';
 import {Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import Chip from '@material-ui/core/Chip';
 import Avatar from '@material-ui/core/Avatar';
 import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite, FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
-import {checkValidToken} from '../utils/tokenMethods';
+import {checkValidToken} from '../../utils/tokenMethods';
 import {IconContext} from 'react-icons';
-import ShoppingOptions from './ShoppingOptions';
+import ShoppingOptions from '../ShoppingOptions';
 import {connect} from 'react-redux';
-import {addProductToCart} from '../redux/actions';
+import {addProductToCart} from '../../redux/actions';
 
 function ProductDetails(props)
 {
