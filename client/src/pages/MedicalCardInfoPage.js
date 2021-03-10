@@ -1,6 +1,6 @@
 import React from 'react';
 import stepsArray from '../utils/stepsArray';
-import NavbarComponent from '../components/Navbar';
+import NavbarComponent from '../components/global/Navbar';
 import '../Styles/InfoPage.css';
 import '../Styles/MedicalCardInfo.css';
 
