@@ -9,7 +9,7 @@ import FaqPage from './pages/FaqPage';
 import PlantsPage from './pages/PlantsPage'
 import HoursPage from './pages/HoursPage';
 import ProductsPage from './pages/ProductsPage';
-import MarketingFooter from './components/MarketingFooter';
+import MarketingFooter from './components/global/MarketingFooter';
 import ProductDetails from './components/ProductDetails';
 import Store from './pages/Store';
 import Login from './components/Login';

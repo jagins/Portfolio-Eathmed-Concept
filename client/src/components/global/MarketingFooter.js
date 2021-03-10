@@ -1,5 +1,5 @@
 import React from 'react';
-import StoreInfoFooter from './StoreInforFooter';
+import StoreInfoFooter from '../StoreInforFooter';
 
 function MarketingFooter() {
     return (
