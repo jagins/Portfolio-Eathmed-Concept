@@ -12,7 +12,7 @@ import {checkValidToken} from '../utils/tokenMethods';
 import {IconContext} from 'react-icons';
 import ShoppingOptions from './ShoppingOptions';
 import {connect} from 'react-redux';
-import {addProductToCart} from '../actions/index';
+import {addProductToCart} from '../redux/actions';
 
 function ProductDetails(props)
 {
