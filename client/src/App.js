@@ -15,7 +15,7 @@ import Store from './pages/Store';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ShoppingCart from './pages/ShoppingCart';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

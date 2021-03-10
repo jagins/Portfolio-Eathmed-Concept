@@ -5,7 +5,6 @@ import marketingCards from '../utils/marketingCardArray';
 import ContactForm from '../components/marketingPage/ContactForm';
 import Help from '../components/marketingPage/Help';
 import NavbarComponent from '../components/global/Navbar';
-import '../Styles/MarketingPage.css';
 
 function MarketingPage() {
     return (
