@@ -3,8 +3,6 @@ import medicalConditonsArray from '../utils/mecialConditionsArray';
 import MedicalConditionsCard from '../components/MedicalConditionsCard';
 import {otherConditions, spinalConditions} from '../utils/otherMedicalConditions';
 import NavbarComponent from '../components/global/Navbar';
-import '../Styles/InfoPage.css';
-import '../Styles/MedicalCondtions.css';
 
 function MedicalConditionsPage()
 {
