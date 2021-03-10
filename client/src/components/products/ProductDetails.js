@@ -10,7 +10,7 @@ import {FaPrescriptionBottleAlt, FaJoint, FaCookieBite, FaPlusCircle, FaMinusCir
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
 import {checkValidToken} from '../../utils/tokenMethods';
 import {IconContext} from 'react-icons';
-import ShoppingOptions from '../ShoppingOptions';
+import ShoppingOptions from '../store/shopping/ShoppingOptions';
 import {connect} from 'react-redux';
 import {addProductToCart} from '../../redux/actions';
 

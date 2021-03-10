@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
-import {checkValidToken} from '../utils/tokenMethods';
+import {checkValidToken} from '../../../utils/tokenMethods';
 import {IconContext} from 'react-icons';
 import {FaShoppingCart} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
