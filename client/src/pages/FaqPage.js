@@ -1,7 +1,6 @@
 import React from 'react';
 import faqArray from '../utils/faqArray';
-import NavbarComponent from '../components/Navbar';
-import '../Styles/InfoPage.css';
+import NavbarComponent from '../components/global/Navbar';
 
 function FaqPage()
 {

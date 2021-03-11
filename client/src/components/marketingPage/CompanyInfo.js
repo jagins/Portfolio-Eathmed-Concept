@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from '../images/earthmed-site-logo-bigger.png';
-import StoreInfoHeader from './StoreInfoHeader';
-import '../Styles/CompanyInfo.css';
+import logo from '../../images/earthmed-site-logo-bigger.png';
+import StoreInfoHeader from '../store/StoreInfoHeader';
 
 function CompanyInfo() {
     return (

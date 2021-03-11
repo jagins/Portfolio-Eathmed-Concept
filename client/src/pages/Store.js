@@ -1,10 +1,9 @@
 import React from 'react';
 import logo from '../images/earthmed-site-logo-bigger.png';
-import StoreHeader from '../components/StoreHeader';
-import StoreSidebar from '../components/StoreSidebar';
-import StoreProducts from '../components/StoreProducts';
-import '../Styles/Store.css';
-import ShoppingOptions from '../components/ShoppingOptions';
+import StoreHeader from '../components/store/StoreHeader';
+import StoreSidebar from '../components/store/StoreSidebar';
+import StoreProducts from '../components/store/StoreProducts';
+import ShoppingOptions from '../components/store/shopping/ShoppingOptions';
 
 function Store()
 {

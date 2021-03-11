@@ -1,6 +1,5 @@
 import React from 'react';
-import NavbarComponent from '../components/Navbar';
-import '../Styles/InfoPage.css';
+import NavbarComponent from '../components/global/Navbar';
 
 function HoursPage()
 {

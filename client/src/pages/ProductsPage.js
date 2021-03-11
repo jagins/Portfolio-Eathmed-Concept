@@ -1,6 +1,5 @@
 import React from 'react';
-import '../Styles/InfoPage.css';
-import NavbarComponent from '../components/Navbar';
+import NavbarComponent from '../components/global/Navbar';
 
 function ProductsPage()
 {

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Button, Dropdown} from 'react-bootstrap';
 import {connect} from 'react-redux';
-import {getProducts} from '../actions';
+import {getProducts} from '../../redux/actions';
 
 function StoreHeader(props)
 {

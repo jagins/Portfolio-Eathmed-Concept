@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
-import Navbar from './Navbar';
-import '../Styles/Login.css';
+import Navbar from '../components/global/Navbar';
 import axios from 'axios';
 import {setToken} from '../utils/tokenMethods';
 

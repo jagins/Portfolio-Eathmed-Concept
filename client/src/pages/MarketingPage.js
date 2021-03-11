@@ -1,11 +1,10 @@
 import React from 'react';
-import CompanyInfo from '../components/CompanyInfo';
-import Card from '../components/Card';
+import CompanyInfo from '../components/marketingPage/CompanyInfo';
+import Card from '../components/marketingPage/Card';
 import marketingCards from '../utils/marketingCardArray';
-import ContactForm from '../components/ContactForm';
-import Help from '../components/Help';
-import NavbarComponent from '../components/Navbar';
-import '../Styles/MarketingPage.css';
+import ContactForm from '../components/marketingPage/ContactForm';
+import Help from '../components/marketingPage/Help';
+import NavbarComponent from '../components/global/Navbar';
 
 function MarketingPage() {
     return (

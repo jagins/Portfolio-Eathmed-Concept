@@ -3,7 +3,7 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import {FaFacebookSquare, FaTwitter} from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import {Link} from 'react-router-dom';
-import '../Styles/SocialMedia.css';
+import '../../Styles/SocialMedia.css';
 
 function NavbarComponent() {
     return (
