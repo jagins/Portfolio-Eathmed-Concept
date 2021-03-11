@@ -1,0 +1,23 @@
+.contact-form {
+    width: 50%;
+    margin-top: 1%;
+
+    form {
+        height: 100%;
+        margin-left: 15%;
+
+        input {
+            margin-bottom: 3%;
+            margin-right: 5%;
+        }
+
+        .subject {
+            width: 54.5%;
+        }
+
+        textarea {
+            width: 54.5%;
+            height: 10rem;
+        }
+    }
+}

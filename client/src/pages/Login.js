@@ -2,10 +2,8 @@ import React, {useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 import Navbar from '../components/global/Navbar';
-// import '../../Styles/Login.css';
 import '../Styles/Login.css';
 import axios from 'axios';
-// import {setToken} from '../utils/tokenMethods';
 import {setToken} from '../utils/tokenMethods';
 
 function Login()

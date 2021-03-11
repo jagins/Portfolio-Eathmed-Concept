@@ -3,7 +3,6 @@ import logo from '../images/earthmed-site-logo-bigger.png';
 import StoreHeader from '../components/store/StoreHeader';
 import StoreSidebar from '../components/store/StoreSidebar';
 import StoreProducts from '../components/store/StoreProducts';
-import '../Styles/Store.css';
 import ShoppingOptions from '../components/store/shopping/ShoppingOptions';
 
 function Store()
