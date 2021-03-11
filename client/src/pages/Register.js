@@ -6,7 +6,6 @@ import 'yup-phone';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import Register2 from '../components/auth/Regsister2';
-import '../Styles/registration.css';
 
 function Register() {
     const schema = yup.object().shape({
