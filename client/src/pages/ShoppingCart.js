@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ShoppingCartDetails from '../components/store/shopping/ShoppingCartDetails';
-import '../Styles/ShoppingCart.css';
 
 function ShoppingCart(props)
 {

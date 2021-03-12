@@ -14,7 +14,6 @@ import {calulcateLineItems, deleteCart} from '../../../redux/actions';
 import Button from 'react-bootstrap/Button';
 import swal from 'sweetalert';
 import {useHistory} from 'react-router-dom';
-import '../../../Styles/ShoppingCart.css';
 
 const StyledRadio = withStyles({
     root: {

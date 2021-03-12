@@ -1,0 +1,13 @@
+.social-icons {
+    color: darkgray;
+    display: flex;
+    cursor: pointer;
+
+    .twitter:hover {
+        color: green;
+    }
+
+    .facebook:hover {
+        color: green;
+    }
+}
