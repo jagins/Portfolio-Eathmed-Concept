@@ -12,8 +12,8 @@ import ProductsPage from '../../pages/ProductsPage';
 import MarketingFooter from './MarketingFooter';
 import ProductDetails from '../products/ProductDetails';
 import Store from '../../pages/Store';
-import Login from '../../pages/Login';
-import Register from '../../pages/Register';
+import LoginPage from '../../pages/LoginPage';
+import RegisterPage from '../../pages/RegisterPage';
 import ShoppingCart from '../../pages/ShoppingCart';
 
 function Navigation() {
@@ -31,8 +31,8 @@ function Navigation() {
             <Route path='/hours' component={HoursPage} />
             <Route exact path='/store' component={Store} />
             <Route path='/store/products/:id' component={ProductDetails} />
-            <Route path='/store/login' component={Login}/>
-            <Route path='/store/register' component={Register}/>
+            <Route path='/store/login' component={LoginPage}/>
+            <Route path='/store/register' component={RegisterPage}/>
             <Route path='/store/cart' component={ShoppingCart}/>
           </Switch>
           <MarketingFooter/>
