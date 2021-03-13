@@ -1,6 +1,7 @@
 import React from 'react';
 import stepsArray from '../utils/stepsArray';
 import NavbarComponent from '../components/global/Navbar';
+import QualificationsList from '../components/QualificationsList';
 
 function MedicalCardInfo() {
     return (
@@ -11,12 +12,7 @@ function MedicalCardInfo() {
             <p className='desc'>In order to qualify for a license to use and legally purchase medical marijuana, you must fulfill the following qualifications:</p>
 
             <div className='qualifications'>
-                <ul className='qualification-list'>
-                    <li>Be 18 years of age or older (minors need two physician recommendations as well as consent from their legal guardian),</li>
-                    <li>Be diagnosed with a qualifying medical condition – click here to see a list of qualifying medical conditions,</li>
-                    <li>Have consent from a physician,</li>
-                    <li>Be an Illinois state resident with proof of residency.</li>
-                </ul>
+               <QualificationsList/>
             </div>
 
             <div className='steps-container'>
