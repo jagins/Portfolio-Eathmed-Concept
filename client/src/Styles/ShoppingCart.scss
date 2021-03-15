@@ -1,6 +1,7 @@
+@import './colors/colors.scss';
 section {
     .cart-empty {
-        border: 1px solid lightgray;
+        border: 1px solid $lightGray;
         text-align: center;
         width: 50%;
         margin: 0 auto;
@@ -14,14 +15,14 @@ section {
             justify-content: space-around;
      
             .order-details {
-                border: 1px solid lightgray;
+                border: 1px solid $lightGray;
                 width: 40%;
                 padding: 2%;
                 height: 100%;
             }
      
             .shopping-cart-list {
-                border: 1px solid lightgray;
+                border: 1px solid $lightGray;
                 width: 45%;
      
                 .shopping-cart-header {
@@ -41,7 +42,7 @@ section {
                     }
      
                     .cart-item {
-                        border: 1px solid lightgray;
+                        border: 1px solid $lightGray;
                         width: 90%;
                         margin: 0 auto;
                         margin-top: 2%;
@@ -69,7 +70,7 @@ section {
                             }
      
                             .btn {
-                                background-color: white;
+                                background-color: $white;
                                 border: none;
      
                                 .quanity-icons:focus {
@@ -89,7 +90,7 @@ section {
             justify-content: space-between;
              
             .things {
-                border: 1px solid lightgray;
+                border: 1px solid $lightGray;
                 width: 40%;
                 padding: 2%;
                 height: 100%;
@@ -125,13 +126,12 @@ section {
             }
      
             .order-btn {
-                border: 1px solid red;
                 margin-left: 28vw;
                 width: 30%;
                 padding: 2%;
-                border: #28a745;
+                border: $earthMedGreen;
                 margin-top: 5%;
-                background-color: #28a745;
+                background-color: $earthMedGreen;
             }
         }
     }

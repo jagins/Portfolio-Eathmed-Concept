@@ -1,3 +1,4 @@
+@import './colors/colors.scss';
 section {
     .login {
         display: flex;
@@ -13,8 +14,8 @@ section {
             right: 30px;
             width: 25px;
             height: 25px;
-            color: #fff;
-            background-color: #418deb;
+            color: $cartText;
+            background-color: $blue;
             border-radius: 50%;
             text-align: center;
         }
@@ -25,7 +26,7 @@ section {
         justify-content: space-evenly;
 
         div {
-            border: 1px solid gray;
+            border: 1px solid $gray;
             width: 20%;
 
             img {
@@ -42,14 +43,14 @@ section {
                 margin-bottom: 5%;
                 width: 50%;
                 padding: 3%;
-                background-color: #e0e0e0;
-                color: #a6a6a6;
-                border: 1px solid #e0e0e0;
+                background-color: $btnDisabled;
+                color: $btnDisabledText;
+                border: 1px solid $btnDisabled;
             }
 
             .cart-button-active {
-                background-color: #28a745;
-                border: #28a745;
+                background-color: $earthMedGreen;
+                border: $earthMedGreen;
             }
 
             .buying-options {
@@ -82,7 +83,7 @@ section {
                             }
 
                             .btn {
-                                background-color: white;
+                                background-color: $white;
                                 border: none;
 
                                 &:focus {
@@ -103,8 +104,8 @@ section {
         .product-details-card {
             h6 {
                 text-align: center;
-                background: #5b5d62;
-                color: white;
+                background: $productDetailsBackground;
+                color: $white;
                 padding: 1%
             }
 
@@ -136,18 +137,18 @@ section {
                     width: fit-content;
 
                     .Indica {
-                        background: blue;
-                        color: white;
+                        background: $indicaBlue;
+                        color: $white;
                     }
 
                     .Hybrid {
-                        background: green;
-                        color: white;
+                        background: $green;
+                        color: $white;
                     }
 
                     .Sativa {
-                        background: red;
-                        color: white;
+                        background: $sativaRed;
+                        color: $white;
                     }
                 }
             }
