@@ -1,3 +1,4 @@
+@import './colors/colors.scss';
 .login {
     h3 {
         text-align: center;
@@ -30,12 +31,12 @@
         width: 100%;
         padding-top: 2%;
         padding-bottom: 2%;
-        background-color: #28a745;
-        border: #28a745;
+        background-color: $earthMedGreen;
+        border: $earthMedGreen;
 
         &:hover {
-            background-color: green;
-            border: green;
+            background-color: $earthMedGreen;
+            border: $earthMedGreen;
         }
     }
 }

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import Navbar from '../components/global/Navbar';
+import Navbar from '../global/Navbar';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import 'yup-phone';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
-import Register2 from '../components/auth/Regsister2';
+import Register2 from './Regsister2';
 
 function Register() {
     const schema = yup.object().shape({

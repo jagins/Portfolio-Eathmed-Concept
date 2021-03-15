@@ -1,13 +1,14 @@
+@import './colors/colors.scss';
 .social-icons {
-    color: darkgray;
+    color: $gray;
     display: flex;
     cursor: pointer;
 
     .twitter:hover {
-        color: green;
+        color: $green;
     }
 
     .facebook:hover {
-        color: green;
+        color: $green;
     }
 }

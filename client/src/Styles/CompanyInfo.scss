@@ -1,6 +1,7 @@
+@import './colors/colors.scss';
 .container {
     display: flex;
-    color: green;
+    color: $green;
 
     .img-container {
         margin-top: 5%;
@@ -31,14 +32,14 @@
     .store-info {
         .info {
             line-height: 1%;
-            color: green;
+            color: $green;
         }
 
         .icon {
-            color: green;
+            color: $green;
 
             &:hover {
-                color: green;
+                color: $green;
             }
         }
     }
