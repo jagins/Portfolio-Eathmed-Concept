@@ -1,4 +1,3 @@
-// import {testArray} from '../utils/testProducts';
 import axios from 'axios';
 let currentType ='';
 export const getProducts = (type) => dispatch =>
