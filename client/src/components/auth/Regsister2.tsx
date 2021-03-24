@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 import {setToken} from '../../utils/tokenMethods';
 import Button from 'react-bootstrap/Button';
 
-function Register2({data}) {
+function Register2({data}: any) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
     const history = useHistory();
 
-    const passwordChange = (event) => {
+    const passwordChange = (event: ChangeEvent<HTMLInputElement>) => {
         setPassword(event.target.value);
     }
 
-    const confirmPasswordChange = (event) => {
+    const confirmPasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
         setConfirmPassword(event.target.value);
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if(password === confirmPassword)
         {

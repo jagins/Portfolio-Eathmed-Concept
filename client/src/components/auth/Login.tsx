@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {ChangeEvent, FormEvent, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 import Navbar from '../global/Navbar';
@@ -14,7 +14,7 @@ function Login()
 
     const history = useHistory();
 
-    const handleChange = event =>
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) =>
     {
         setState({
             ...state,
@@ -22,7 +22,7 @@ function Login()
         });
     }
 
-    const handleSubmit = (event) => 
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => 
     {
         event.preventDefault();
         axios.post(`${process.env.REACT_APP_URL}/auth/login`, state)

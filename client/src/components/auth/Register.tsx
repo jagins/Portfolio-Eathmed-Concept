@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {SetStateAction, useState} from 'react';
 import Navbar from '../global/Navbar';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
@@ -19,7 +19,7 @@ function Register() {
     const [registerStepNumber, setRegisterStepNumber] = useState(1);
     const [data, setData] = useState({});
    
-    const onSubmit = data => {
+    const onSubmit = (data: SetStateAction<{}>) => {
         setData(data);
         setRegisterStepNumber(registerStepNumber + 1);
     };
