@@ -6,7 +6,21 @@ import {IconContext} from 'react-icons';
 import {GiSodaCan, GiSmokeBomb} from 'react-icons/gi';
 import {useHistory} from 'react-router-dom';
 
-function StoreProductCard(props) 
+interface Props {
+    product: {
+        product_type: string,
+        strain_type: string,
+        id: number,
+        name: string,
+        image: string,
+        product_name: string,
+        size: number,
+        thca: number,
+        price: number
+    }
+}
+
+function StoreProductCard(props: Props) 
 { 
     const [style] = useState({marginRight: '5px'});
     const history = useHistory();

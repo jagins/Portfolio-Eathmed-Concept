@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, ChangeEvent} from 'react';
 import Chip from '@material-ui/core/Chip';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -7,17 +7,26 @@ import Avartar from '@material-ui/core/Avatar';
 import {filterCurrentProducts} from '../../redux/actions';
 import {connect} from 'react-redux';
 
-function StoreSidebar(props)
+interface Props {
+    products: Array<any>
+    filterCurrentProducts: (strainType: Array<Object>, checkboxs: Object) => void
+}
+
+interface State {
+    products: Array<any>
+}
+
+function StoreSidebar(props: Props)
 {
     const [hybrid, setHybrid] = useState({name: 'Hybrid', value: false});
     const [indica, setIndica] = useState({name: 'Indica', value: false});
     const [sativa, setSativa] = useState({name: 'Sativa', value: false});
-    const [brandCheckbox, setBrandCheckbox] = useState({});
+    const [brandCheckbox, setBrandCheckbox] = useState(Object);
     const {products, filterCurrentProducts} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
-    let brands = []; 
-    let sizes = [];
+    let brands: Array<any> = []; 
+    let sizes: Array<any> = [];
 
     if(products.length > 0)
     {
@@ -68,7 +77,7 @@ function StoreSidebar(props)
         filterCurrentProducts([hybrid, indica, sativa], brandCheckbox)
     }, [hybrid, indica, sativa, filterCurrentProducts, brandCheckbox])
 
-    const handleCheckbox = (event) =>
+    const handleCheckbox = (event: ChangeEvent<HTMLInputElement>) =>
     {
         setBrandCheckbox({
             ...brandCheckbox,
@@ -137,7 +146,7 @@ function StoreSidebar(props)
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State) => {
     return {
         products: state.products,
     };

@@ -6,7 +6,24 @@ import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
 import {increaseCartItem, decreaseCartItem, removeCartItem} from '../../../redux/actions';
 
-function CartItem(props) {
+interface Props {
+    increaseCartItem: (item: Object) => void,
+    decreaseCartItem: (item: Object) => void,
+    removeCartItem: (item: Object) => void,
+    key: number,
+    item: Item
+
+}
+
+interface Item {
+    image: string,
+    product_name: string,
+    quanity: number,
+    price: number
+
+}
+
+function CartItem(props: Props) {
     const increase = () => {
         props.increaseCartItem(props.item)
     }

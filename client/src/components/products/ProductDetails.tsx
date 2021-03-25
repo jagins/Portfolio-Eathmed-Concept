@@ -13,14 +13,22 @@ import ShoppingOptions from '../store/shopping/ShoppingOptions';
 import {connect} from 'react-redux';
 import {addProductToCart} from '../../redux/actions';
 
-function ProductDetails(props)
+interface Props {
+    addProductToCart: (product: Object, quanity: number) => void
+}
+
+interface ParamTypes {
+    id: string
+}
+
+function ProductDetails(props: Props)
 {
-    const {id} = useParams();
-    const [product, setProduct] = useState(null);
+    const {id} = useParams<ParamTypes>();
+    const [product, setProduct] = useState(null || Object);
     const [quanity, setQuanity] = useState(1);
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_URL}/products/${id}`)
+        axios.get<any>(`${process.env.REACT_APP_URL}/products/${id}`)
         .then(res => setProduct(res.data))
         .catch(err => console.log(err))
     }, [id])
@@ -140,8 +148,5 @@ function ProductDetails(props)
     );
 }
 
-const mapStateToProps = state => {
-    return state;
-}
 
-export default connect(mapStateToProps, {addProductToCart})(ProductDetails);
+export default connect(null, {addProductToCart})(ProductDetails);

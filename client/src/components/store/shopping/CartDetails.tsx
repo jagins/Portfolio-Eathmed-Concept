@@ -2,7 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import CartItem from './CartItem';
 
-function CartDetails(props)
+interface Props {
+    shoppingCart: Array<any>
+}
+
+interface State {
+    shoppingCart: Array<any>
+}
+
+function CartDetails(props: Props)
 {
     return (
         <div className='shopping-cart-header'>
@@ -15,7 +23,7 @@ function CartDetails(props)
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State) => {
     return {
         shoppingCart: state.shoppingCart
     }
