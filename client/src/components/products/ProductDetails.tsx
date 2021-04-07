@@ -21,10 +21,24 @@ interface ParamTypes {
     id: string
 }
 
+interface Product {
+    id: number,
+    product_name: string,
+    price: number,
+    product_type: string,
+    thca: number,
+    cbd: number,
+    size: number,
+    strain_type: string,
+    image: string,
+    description: string,
+    company_id: number
+}
+
 function ProductDetails(props: Props)
 {
     const {id} = useParams<ParamTypes>();
-    const [product, setProduct] = useState(null || Object);
+    const [product, setProduct] = useState<Product | undefined>(undefined);
     const [quanity, setQuanity] = useState(1);
 
     useEffect(() => {
@@ -34,7 +48,7 @@ function ProductDetails(props: Props)
     }, [id])
     
     const getProductType = () => {
-        switch(product.product_type)
+        switch(product?.product_type)
         {
             case 'Flower':
                 return <FaPrescriptionBottleAlt/>
@@ -62,8 +76,10 @@ function ProductDetails(props: Props)
     }
     
     const addToCart = () => {
-        props.addProductToCart(product, quanity);
+        props.addProductToCart(product!, quanity);
     }
+    
+    console.log('product console log: ' + product)
 
     return (
         <section>
