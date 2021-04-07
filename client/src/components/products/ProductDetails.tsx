@@ -48,7 +48,7 @@ function ProductDetails(props: Props)
     }, [id])
     
     const getProductType = () => {
-        switch(product?.product_type)
+        switch(product!.product_type)
         {
             case 'Flower':
                 return <FaPrescriptionBottleAlt/>
