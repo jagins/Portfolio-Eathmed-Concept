@@ -13,20 +13,42 @@ import ShoppingOptions from '../store/shopping/ShoppingOptions';
 import {connect} from 'react-redux';
 import {addProductToCart} from '../../redux/actions';
 
-function ProductDetails(props)
+interface Props {
+    addProductToCart: (product: Object, quanity: number) => void
+}
+
+interface ParamTypes {
+    id: string
+}
+
+interface Product {
+    id: number,
+    product_name: string,
+    price: number,
+    product_type: string,
+    thca: number,
+    cbd: number,
+    size: number,
+    strain_type: string,
+    image: string,
+    description: string,
+    company_id: number
+}
+
+function ProductDetails(props: Props)
 {
-    const {id} = useParams();
-    const [product, setProduct] = useState(null);
+    const {id} = useParams<ParamTypes>();
+    const [product, setProduct] = useState<Product | undefined>(undefined);
     const [quanity, setQuanity] = useState(1);
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_URL}/products/${id}`)
+        axios.get<any>(`${process.env.REACT_APP_URL}/products/${id}`)
         .then(res => setProduct(res.data))
         .catch(err => console.log(err))
     }, [id])
     
     const getProductType = () => {
-        switch(product.product_type)
+        switch(product!.product_type)
         {
             case 'Flower':
                 return <FaPrescriptionBottleAlt/>
@@ -54,8 +76,10 @@ function ProductDetails(props)
     }
     
     const addToCart = () => {
-        props.addProductToCart(product, quanity);
+        props.addProductToCart(product!, quanity);
     }
+    
+    console.log('product console log: ' + product)
 
     return (
         <section>
@@ -140,8 +164,5 @@ function ProductDetails(props)
     );
 }
 
-const mapStateToProps = state => {
-    return state;
-}
 
-export default connect(mapStateToProps, {addProductToCart})(ProductDetails);
+export default connect(null, {addProductToCart})(ProductDetails);

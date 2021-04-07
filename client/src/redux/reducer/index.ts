@@ -1,3 +1,13 @@
+interface initialState {
+    isLoading: boolean,
+    products: Array<any>,
+    shoppingCart: Array<any>,
+    error: string,
+    subtotal_amount: number,
+    total: number,
+    tax: number
+}
+
 const initialState = {
     isLoading: false,
     products: [],
@@ -8,7 +18,7 @@ const initialState = {
     tax: 0
 }
 
-export const reducer = (state = initialState, action) =>
+export const reducer = (state: initialState = initialState, action: any) =>
 {
     switch(action.type)
     {

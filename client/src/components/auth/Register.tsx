@@ -1,25 +1,25 @@
-import React, {useState} from 'react';
+import React, {SetStateAction, useState} from 'react';
 import Navbar from '../global/Navbar';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
-import 'yup-phone';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
 import Register2 from './Regsister2';
 
 function Register() {
+    const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
     const schema = yup.object().shape({
         firstName: yup.string().min(2, 'First name must have least 2 characters').required('First name is a required field'),
         lastName: yup.string().min(4, 'Last name must have at least 4 characters').required('Last name is a required field'),
         email: yup.string().email().required('Email is a required field'),
-        phoneNumber: yup.string().phone().required('Phone number is a required field')
+        phoneNumber: yup.string().matches(phoneRegExp).required('Phone number is a required field')
     });
     const {register, handleSubmit, errors} = useForm({resolver: yupResolver(schema)});
 
     const [registerStepNumber, setRegisterStepNumber] = useState(1);
     const [data, setData] = useState({});
    
-    const onSubmit = data => {
+    const onSubmit = (data: SetStateAction<{}>) => {
         setData(data);
         setRegisterStepNumber(registerStepNumber + 1);
     };

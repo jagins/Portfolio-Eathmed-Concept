@@ -2,14 +2,19 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {calulcateLineItems, deleteCart} from '../../../redux/actions';
 import Button from 'react-bootstrap/Button';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 import {useHistory} from 'react-router-dom';
 import ThingsToKnow from './ThingsToKnow';
 import LineItems from './LineItems';
 import OrderDetails from './OrderDetails';
 import CartDetails from './CartDetails';
 
-function ShoppingCartDetails(props) {
+interface Props {
+    calulcateLineItems: () => void, 
+    deleteCart: () => void
+}
+
+function ShoppingCartDetails(props: Props) {
     const history = useHistory();
 
     useEffect(() => {
@@ -18,11 +23,11 @@ function ShoppingCartDetails(props) {
 
     const placeOrder = () => {
         const orderNumber = Math.floor(Math.random() * 1000000);
-        swal({
+        swal.fire({
             title: 'Order Placed!',
             text: `Your order has been placed! Please arrive within 2 hours to claim your purchase. Upon check in please give the Earthmed Associate your order number: ${orderNumber}`,
             icon: 'success',
-            button: 'OK' 
+            confirmButtonText: 'OK' 
         })
         .then(done => {
             if(done) {

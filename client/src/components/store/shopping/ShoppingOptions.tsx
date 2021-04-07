@@ -6,7 +6,15 @@ import {FaShoppingCart} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
 
-function ShoppingOptions(props)
+interface Props {
+    shoppingCart: Array<any>
+}
+
+interface State {
+    shoppingCart: Array<any>
+}
+
+function ShoppingOptions(props: Props)
 {
     const history = useHistory();
     return (
@@ -22,7 +30,7 @@ function ShoppingOptions(props)
     );
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State) => {
     return {
         shoppingCart: state.shoppingCart
     }

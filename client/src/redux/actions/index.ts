@@ -1,7 +1,6 @@
-// import {testArray} from '../utils/testProducts';
 import axios from 'axios';
 let currentType ='';
-export const getProducts = (type) => dispatch =>
+export const getProducts = (type: string) => (dispatch: any) =>
 {
     currentType = type;
     axios.get(`${process.env.REACT_APP_URL}/products?product_type=${type}`)
@@ -13,7 +12,7 @@ export const getProducts = (type) => dispatch =>
     .catch(err => console.log(err));
 }
 
-export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
+export const filterCurrentProducts = (strainType: Array<any>, checkboxs: Object) => (dispatch: any) =>
 {
         let string = '';
         let boxes = Object.keys(checkboxs)
@@ -70,7 +69,7 @@ export const filterCurrentProducts = (strainType, checkboxs) => dispatch =>
         }
 }
 
-export const addProductToCart = (product, quanity) => dispatch => {
+export const addProductToCart = (product: Object, quanity: number) => (dispatch: any) => {
     dispatch({
             type: 'ADD_TO_CART', 
             payload: {
@@ -80,25 +79,25 @@ export const addProductToCart = (product, quanity) => dispatch => {
         })
 }
 
-export const calulcateLineItems = () => dispatch => {
+export const calulcateLineItems = () => (dispatch: any) => {
     dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }
 
-export const increaseCartItem = (product) => dispatch => {
+export const increaseCartItem = (product: Object) => (dispatch: any) => {
     dispatch({type: 'INCREASE_CART_ITEM', payload: product});
     dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }
 
-export const decreaseCartItem = (product) => dispatch => {
+export const decreaseCartItem = (product: Object) => (dispatch: any) => {
     dispatch({type: 'DECREASE_CART_ITEM', payload: product});
     dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }
 
-export const removeCartItem = (product) => dispatch => {
+export const removeCartItem = (product: Object) => (dispatch: any) => {
     dispatch({type: 'REMOVE_CART_ITEM', payload: product});
     dispatch({type: 'CALCULATE_LINE_ITEMS'});
 }
 
-export const deleteCart = () => dispatch => {
+export const deleteCart = () => (dispatch: any) => {
     dispatch({type: 'DELETE_CART'});
 }

@@ -18,7 +18,7 @@ function MarketingPage() {
                         <Card
                             key={index}
                             url={card.url}
-                            alt={card.caption}
+                            caption={card.caption}
                             title={card.title}
                             descritpion={card.description}
                         />)}

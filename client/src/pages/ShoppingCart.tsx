@@ -2,7 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import ShoppingCartDetails from '../components/store/shopping/ShoppingCartDetails';
 
-function ShoppingCart(props)
+interface Props {
+    shoppingCart: Array<any>
+}
+
+interface State {
+    shoppingCart: Array<any>
+}
+
+function ShoppingCart(props: Props)
 {
     return (
         <section>
@@ -17,7 +25,7 @@ function ShoppingCart(props)
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State) => {
     return {
         shoppingCart: state.shoppingCart
     }

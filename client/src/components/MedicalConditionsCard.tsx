@@ -1,6 +1,12 @@
 import React from 'react';
 
-function MedicalConditionsCard(props)
+interface Props {
+    key: number,
+    title: string,
+    description: string
+}
+
+function MedicalConditionsCard(props: Props)
 {
     const {title, description} = props;
     return (

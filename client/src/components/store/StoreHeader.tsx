@@ -3,7 +3,18 @@ import {Button, Dropdown} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {getProducts} from '../../redux/actions';
 
-function StoreHeader(props)
+interface Props {
+    isLoading: boolean,
+    products: Array<any>,
+    getProducts: (menu: string) => void
+}
+
+interface State {
+    isLoading: boolean,
+    products: Array<any>,
+}
+
+function StoreHeader(props: Props)
 {
     const [menu, setMenu] = useState('Flower');
     const {isLoading, products, getProducts} = props;
@@ -14,7 +25,7 @@ function StoreHeader(props)
     return (
         <header className='store-header'>
             <Dropdown>
-                <Dropdown.Toggle variant='success'>{menu}</Dropdown.Toggle>
+                <Dropdown.Toggle variant='success' id='dropdown'>{menu}</Dropdown.Toggle>
                 <Dropdown.Menu className='dropdown-menu'>
                     <Dropdown.Header>Choose a Form</Dropdown.Header>
                         <Dropdown.Item onSelect={() => setMenu('Flower')}><Button variant='outline-success'>Flower</Button></Dropdown.Item>
@@ -31,7 +42,7 @@ function StoreHeader(props)
     )
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state: State) => {
     return {
         isLoading: state.isLoading,
         products: state.products
