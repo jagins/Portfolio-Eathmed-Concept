@@ -21,16 +21,12 @@ function LineItems(props: Props)
                 <p>Subtotal</p>
                 <p>${(props.subtotal_amount).toFixed(2)}</p>
             </div>
-                    
-            <hr/>
-                    
+            <hr/>  
             <div className='line-item'>
                 <p>Tax</p>
                 <p>${(props.tax).toFixed(2)}</p>
-            </div>
-                    
-            <hr/>
-                    
+            </div>   
+            <hr/>     
             <div className='line-item'>
                 <h3>Total</h3>
                 <h3>${(props.total).toFixed(2)}</h3>
