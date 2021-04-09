@@ -5,6 +5,7 @@ import {FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
 import {increaseCartItem, decreaseCartItem, removeCartItem} from '../../../redux/actions';
+import QuanityButton from '../../global/QuanityButton';
 
 interface Props {
     increaseCartItem: (item: Object) => void,
@@ -40,9 +41,9 @@ function CartItem(props: Props) {
             <div className='cart-item-bottom'>
                 <IconContext.Provider value={{size: '28px', color: '#28a745'}}>
                     <div className='quanity-icons'>
-                        <Button className='btn' disabled={false} onClick={increase}><FaPlusCircle/></Button>
+                        <QuanityButton disabled={false} onClick={increase}><FaPlusCircle/></QuanityButton>
                         <span>{props.item.quanity}</span>
-                        <Button className='btn' disabled={false} onClick={decrease}><FaMinusCircle/></Button>
+                        <QuanityButton disabled={false} onClick={decrease}><FaMinusCircle/></QuanityButton>
                     </div>
                 </IconContext.Provider>
                 <h4>${props.item.price}</h4>
