@@ -6,14 +6,15 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Avartar from '@material-ui/core/Avatar';
 import {filterCurrentProducts} from '../../redux/actions';
 import {connect} from 'react-redux';
+import { Product } from '../global/Interfaces';
 
 interface Props {
-    products: Array<any>
+    products: Array<Product>
     filterCurrentProducts: (strainType: Array<Object>, checkboxs: Object) => void
 }
 
 interface State {
-    products: Array<any>
+    products: Array<Product>
 }
 
 function StoreSidebar(props: Props)

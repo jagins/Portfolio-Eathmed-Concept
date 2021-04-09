@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {Button, Dropdown} from 'react-bootstrap';
+import {Dropdown} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import {getProducts} from '../../redux/actions';
+import DropDownItem from './DropDownItem';
 
 interface Props {
     isLoading: boolean,
@@ -28,12 +29,12 @@ function StoreHeader(props: Props)
                 <Dropdown.Toggle variant='success' id='dropdown'>{menu}</Dropdown.Toggle>
                 <Dropdown.Menu className='dropdown-menu'>
                     <Dropdown.Header>Choose a Form</Dropdown.Header>
-                        <Dropdown.Item onSelect={() => setMenu('Flower')}><Button variant='outline-success'>Flower</Button></Dropdown.Item>
-                        <Dropdown.Item onSelect={() => setMenu('Preroll')}><Button variant='outline-success'>Prerolls</Button></Dropdown.Item>
-                        <Dropdown.Item onSelect={() => setMenu('Vape')}><Button variant='outline-success'>Vapes</Button></Dropdown.Item>
-                        <Dropdown.Item onSelect={() => setMenu('Concentrates')}><Button variant='outline-success'>Concentrates</Button></Dropdown.Item>
-                        <Dropdown.Item onSelect={() => setMenu('Edible')}><Button variant='outline-success'>Edibles</Button></Dropdown.Item>
-                        <Dropdown.Item onSelect={() => setMenu('Beverage')}><Button variant='outline-success'>Beverages</Button></Dropdown.Item>
+                        <DropDownItem onSelect={() => setMenu('Flower')} buttonTitle='Flower'/>
+                        <DropDownItem onSelect={() => setMenu('Preroll')} buttonTitle='Prerolls'/>
+                        <DropDownItem onSelect={() => setMenu('Vape')} buttonTitle='Vapes'/>
+                        <DropDownItem onSelect={() => setMenu('Concentrates')} buttonTitle='Concentrates'/>
+                        <DropDownItem onSelect={() => setMenu('Edible')} buttonTitle='Edibles'/>
+                        <DropDownItem onSelect={() => setMenu('Beverage')} buttonTitle='Beverages'/>
                 </Dropdown.Menu>
             </Dropdown>
 

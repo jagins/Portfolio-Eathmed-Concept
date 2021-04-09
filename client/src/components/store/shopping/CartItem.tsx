@@ -2,26 +2,17 @@ import React from 'react';
 import {FaRegTrashAlt} from 'react-icons/fa';
 import {IconContext} from 'react-icons';
 import {FaPlusCircle, FaMinusCircle} from 'react-icons/fa';
-import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
 import {increaseCartItem, decreaseCartItem, removeCartItem} from '../../../redux/actions';
 import QuanityButton from '../../global/QuanityButton';
+import { Product } from '../../global/Interfaces';
 
 interface Props {
-    increaseCartItem: (item: Object) => void,
-    decreaseCartItem: (item: Object) => void,
-    removeCartItem: (item: Object) => void,
+    increaseCartItem: (item: Product) => void,
+    decreaseCartItem: (item: Product) => void,
+    removeCartItem: (item: Product) => void,
     key: number,
-    item: Item
-
-}
-
-interface Item {
-    image: string,
-    product_name: string,
-    quanity: number,
-    price: number
-
+    item: Product
 }
 
 function CartItem(props: Props) {
