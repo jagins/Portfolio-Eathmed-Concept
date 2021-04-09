@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface CardProps {
+interface Props {
     key: number,
     url: string,
     caption: string,
@@ -8,7 +8,7 @@ interface CardProps {
     descritpion: string
 }
 
-function Card(props: CardProps)
+function Card(props: Props)
 {
     const {url, caption, title, descritpion} = props;
     return(
