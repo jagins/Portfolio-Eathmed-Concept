@@ -3,8 +3,8 @@ import {filterCurrentProducts} from '../../redux/actions';
 import {connect} from 'react-redux';
 import { Product } from '../global/Interfaces';
 import TypeChip from './TypeChip';
-import SizeContainer from './SizeContainer';
 import BrandContainer from './BrandContainer';
+import SizeContainer from './SizeContainer';
 
 interface Props {
     products: Array<Product>
@@ -21,25 +21,27 @@ function StoreSidebar(props: Props)
     const [indica, setIndica] = useState({name: 'Indica', value: false});
     const [sativa, setSativa] = useState({name: 'Sativa', value: false});
     const [brandCheckbox, setBrandCheckbox] = useState(Object);
+    const {products, filterCurrentProducts} = props;
     const uniqueBrands = new Set();
     const uniqueSizes = new Set();
     let brands: Array<any> = []; 
     let sizes: Array<any> = [];
 
-    if(props.products.length > 0)
+    if(products.length > 0)
     {
-        for(let i = 0; i < props.products.length; i++)
+        for(let i = 0; i < products.length; i++)
         {
-            if(!(props.products[i].company_name in uniqueBrands))
-                uniqueBrands.add(props.products[i].company_name);
+            if(!(products[i].company_name in uniqueBrands))
+                uniqueBrands.add(products[i].company_name);
             
-            if(!(props.products[i].size in uniqueSizes))
-                uniqueSizes.add(props.products[i].size);
+            if(!(products[i].size in uniqueSizes))
+                uniqueSizes.add(products[i].size);
         }
 
         brands = Array.from(uniqueBrands);
         sizes = Array.from(uniqueSizes);
     }
+
 
     const changeHybrid = () => 
     {
@@ -66,7 +68,8 @@ function StoreSidebar(props: Props)
     }
 
     useEffect(() => {
-        for(let key in brandCheckbox){
+        for(let key in brandCheckbox)
+        {
             if(!brandCheckbox[key])
                 delete brandCheckbox[key];
         }
@@ -90,9 +93,9 @@ function StoreSidebar(props: Props)
                 <TypeChip type={sativa} onClick={changeSativa}/>
             </div>
             <hr/>
-            <BrandContainer brands={brands} brandCheckbox={brandCheckbox} onChange={() => handleCheckbox}/>
+           <BrandContainer brands={brands} brandCheckbox={brandCheckbox} onChange={() => handleCheckbox}/>
             <hr/>
-           <SizeContainer sizes={sizes}/>
+            <SizeContainer sizes={sizes}/>
         </div>
     )
 }
