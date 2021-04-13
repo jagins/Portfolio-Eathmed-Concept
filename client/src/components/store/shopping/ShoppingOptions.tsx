@@ -5,13 +5,14 @@ import {IconContext} from 'react-icons';
 import {FaShoppingCart} from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import {connect} from 'react-redux';
+import { Product } from '../../global/Interfaces';
 
 interface Props {
-    shoppingCart: Array<any>
+    shoppingCart: Array<Product>
 }
 
 interface State {
-    shoppingCart: Array<any>
+    shoppingCart: Array<Product>
 }
 
 function ShoppingOptions(props: Props)

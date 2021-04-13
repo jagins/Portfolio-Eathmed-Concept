@@ -9,5 +9,7 @@ export interface Product {
     strain_type: string,
     image: string,
     description: string,
-    company_id: number
+    company_id: number,
+    company_name: string
+    quanity?: number
 }

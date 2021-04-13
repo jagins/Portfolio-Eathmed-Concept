@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Item from './Item';
 
 interface State {
     subtotal_amount: number,
@@ -17,20 +18,11 @@ function LineItems(props: Props)
 {
     return (
         <>
-            <div className='line-item'>
-                <p>Subtotal</p>
-                <p>${(props.subtotal_amount).toFixed(2)}</p>
-            </div>
+            <Item title='Subtotal' amount={props.subtotal_amount.toFixed(2)}/>
             <hr/>  
-            <div className='line-item'>
-                <p>Tax</p>
-                <p>${(props.tax).toFixed(2)}</p>
-            </div>   
+            <Item title='Tax' amount={props.tax.toFixed(2)}/>
             <hr/>     
-            <div className='line-item'>
-                <h3>Total</h3>
-                <h3>${(props.total).toFixed(2)}</h3>
-            </div>
+            <Item title='Total' amount={props.total.toFixed(2)}/>
         </>
     )
 }
