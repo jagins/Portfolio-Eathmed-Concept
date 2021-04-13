@@ -27,10 +27,8 @@ function StoreSidebar(props: Props)
     let brands: Array<any> = []; 
     let sizes: Array<any> = [];
 
-    if(products.length > 0)
-    {
-        for(let i = 0; i < products.length; i++)
-        {
+    if(products.length > 0) {
+        for(let i = 0; i < products.length; i++){
             if(!(products[i].company_name in uniqueBrands))
                 uniqueBrands.add(products[i].company_name);
             
@@ -43,45 +41,28 @@ function StoreSidebar(props: Props)
     }
 
 
-    const changeHybrid = () => 
-    {
-      setHybrid({
-          ...hybrid,
-          value: !hybrid.value
-      })
+    const changeHybrid = () => {
+      setHybrid({...hybrid, value: !hybrid.value});
     }
 
-    const changeIndica = () => 
-    {
-      setIndica({
-          ...indica,
-          value: !indica.value
-      })
+    const changeIndica = () => {
+        setIndica({...indica, value: !indica.value});
     }
 
-    const changeSativa = () => 
-    {
-      setSativa({
-          ...sativa,
-          value: !sativa.value
-      })
+    const changeSativa = () => {
+      setSativa({...sativa, value: !sativa.value});
     }
 
     useEffect(() => {
-        for(let key in brandCheckbox)
-        {
+        for(let key in brandCheckbox) {
             if(!brandCheckbox[key])
                 delete brandCheckbox[key];
         }
         filterCurrentProducts([hybrid, indica, sativa], brandCheckbox)
     }, [hybrid, indica, sativa, filterCurrentProducts, brandCheckbox])
 
-    const handleCheckbox = (event: ChangeEvent<HTMLInputElement>) =>
-    {
-        setBrandCheckbox({
-            ...brandCheckbox,
-            [event.target.name]: event.target.checked
-        });
+    const handleCheckbox = (event: ChangeEvent<HTMLInputElement>) => {
+        setBrandCheckbox({...brandCheckbox, [event.target.name]: event.target.checked});
     }
 
     return (
