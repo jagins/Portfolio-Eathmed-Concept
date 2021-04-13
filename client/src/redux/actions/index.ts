@@ -1,33 +1,26 @@
 import axios from 'axios';
 let currentType ='';
-export const getProducts = (type: string) => (dispatch: any) =>
-{
+export const getProducts = (type: string) => (dispatch: any) => {
     currentType = type;
     axios.get(`${process.env.REACT_APP_URL}/products?product_type=${type}`)
     .then(res => {
         dispatch({type: 'GET_PRODUCTS', payload: res.data})
         dispatch({type: 'SUCCESS'});
-        
     })
     .catch(err => console.log(err));
 }
 
-export const filterCurrentProducts = (strainType: Array<any>, checkboxs: Object) => (dispatch: any) =>
-{
+export const filterCurrentProducts = (strainType: Array<any>, checkboxs: Object) => (dispatch: any) => {
         let string = '';
         let boxes = Object.keys(checkboxs)
-        console.log(boxes)
-        if(strainType.length > 0 && boxes.length > 0)
-        {
-            for(let i = 0; i < strainType.length; i++)
-            {
+        if(strainType.length > 0 && boxes.length > 0) {
+            for(let i = 0; i < strainType.length; i++) {
                 if(strainType[i].value)
                     string += strainType[i].name + ',';
             }
 
             let bString = '';
-            for(let j = 0; j < boxes.length; j++)
-            {
+            for(let j = 0; j < boxes.length; j++) {
                 bString += boxes[j] + ',';
             }
 
@@ -38,11 +31,9 @@ export const filterCurrentProducts = (strainType: Array<any>, checkboxs: Object)
             })
             .catch(err => console.log(err));
         }
-        else if(boxes.length > 0)
-        {
+        else if(boxes.length > 0) {
             let bString = '';
-            for(let j = 0; j < boxes.length; j++)
-            {
+            for(let j = 0; j < boxes.length; j++) {
                 bString += boxes[j] + ',';
             }
 
@@ -53,10 +44,8 @@ export const filterCurrentProducts = (strainType: Array<any>, checkboxs: Object)
             })
             .catch(err => console.log(err));
         }
-        else 
-        {
-            for(let i = 0; i < strainType.length; i++)
-            {
+        else {
+            for(let i = 0; i < strainType.length; i++) {
                 if(strainType[i].value)
                     string += strainType[i].name + ',';
             }
@@ -70,13 +59,7 @@ export const filterCurrentProducts = (strainType: Array<any>, checkboxs: Object)
 }
 
 export const addProductToCart = (product: Object, quanity: number) => (dispatch: any) => {
-    dispatch({
-            type: 'ADD_TO_CART', 
-            payload: {
-                ...product,
-                quanity
-            }
-        })
+    dispatch({type: 'ADD_TO_CART', payload: {...product, quanity}})
 }
 
 export const calulcateLineItems = () => (dispatch: any) => {
